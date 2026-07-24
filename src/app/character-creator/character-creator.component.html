@@ -1,0 +1,33 @@
+<div class="d-flex flex-wrap gap-2 m-2">
+  <button
+    *ngFor="let category of categories"
+    class="btn btn-primary p-1 creator-btn"
+    (click)="selectCategory(category)"
+    [class.active]="category === selectedCategory">
+
+    <img [src]="category.image" [alt]="category.name" class="creator-btn-img">
+  
+  </button>
+</div>
+
+<div class="d-flex flex-wrap gap-2 m-2">
+  <button
+    *ngFor="let color of selectedItem?.colors"
+    class="btn btn-primary p-1 creator-btn"
+    (click)="selectColor(color)"
+    [style.background]="color"
+    [class.active]="color === selectedColor">
+  </button>
+</div>
+
+<div class="d-flex flex-wrap gap-2 button-grid m-2 w-25">
+  <button
+    *ngFor="let item of selectedCategory?.items"
+    class="btn btn-secondary p-1 creator-btn"
+    (click)="selectItem(item)"
+    [class.active]="isSelected(item)">
+    
+    <img [src]="item.thumbnail" [alt]="item.group_id" class="creator-btn-img">
+
+  </button>
+</div>
