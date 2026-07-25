@@ -13,3 +13,8 @@ export interface Category {
   nullable: boolean;
   items: Item[];
 }
+
+export interface EquippedItem {
+  item: Item;
+  selectedColor: string | null;
+}

@@ -21,5 +21,9 @@
 }
 
 .text-primary {
-    color: #567c57 !important;
+  color: #567c57 !important;
+}
+
+.color-popover .popover-body {
+  padding: 0.5em;
 }

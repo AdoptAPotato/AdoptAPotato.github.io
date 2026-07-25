@@ -10,21 +10,33 @@
   </button>
 </div>
 
-<div class="d-flex flex-wrap gap-2 m-2">
-  <button
-    *ngFor="let color of selectedItem?.colors"
-    class="btn btn-primary p-1 creator-btn"
-    (click)="selectColor(color)"
-    [style.background]="color"
-    [class.active]="color === selectedColor">
-  </button>
-</div>
+<ng-template #colorPopover>
+  <div class="d-flex flex-wrap align-items-center gap-2">
+    <button
+      *ngIf="selectedCategory?.nullable"
+      class="btn text-primary p-0"
+      (click)="removeItem()">
+      <i class="bi bi-ban"></i>
+    </button>
+    
+    <button
+      *ngFor="let color of popoverItem?.colors"
+      class="btn color-btn p-1"
+      [style.background]="color"
+      (click)="selectColor(color)">
+    </button>
+  </div>
+</ng-template>
 
 <div class="d-flex flex-wrap gap-2 button-grid m-2 w-25">
   <button
     *ngFor="let item of selectedCategory?.items"
     class="btn btn-secondary p-1 creator-btn"
-    (click)="selectItem(item)"
+    [ngbPopover]="colorPopover"
+    popoverClass="color-popover"
+    triggers="manual"
+    #p="ngbPopover"
+    (click)="selectItem(item, p)"
     [class.active]="isSelected(item)">
     
     <img [src]="item.thumbnail" [alt]="item.group_id" class="creator-btn-img">
