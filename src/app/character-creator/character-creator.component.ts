@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { CommonModule, } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { NgbPopoverModule, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 
-import { Category, Item, EquippedItem } from '../../models/creator';
+import { Category, Item, EquippedItem } from '../models/creator';
+import { CharacterRendererService }  from '../services/character-renderer.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -18,8 +19,11 @@ export class CharacterCreatorComponent implements OnInit {
   selectedCategory?: Category;
   popoverItem?: Item;
   openPopover?: NgbPopover;
+
+  @ViewChild('canvas', { static: true })
+  canvas!: ElementRef<HTMLCanvasElement>;
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private renderer:CharacterRendererService) {}
 
   ngOnInit(): void {
     this.http.get<Category[]>('/data/creator-info.json')
@@ -34,6 +38,11 @@ export class CharacterCreatorComponent implements OnInit {
           }));
 
         this.selectedCategory = this.categories[0];
+
+        this.renderer.render(
+          this.canvas.nativeElement,
+          this.selectedItems
+        );
       });
   }
 
@@ -48,6 +57,7 @@ export class CharacterCreatorComponent implements OnInit {
       this.popoverItem = item;
       popover.open();
       this.openPopover = popover;
+
       return;
     }
 
@@ -73,6 +83,11 @@ export class CharacterCreatorComponent implements OnInit {
         this.selectedItems.splice(index, 1);
       }
 
+      this.renderer.render(
+        this.canvas.nativeElement,
+        this.selectedItems
+      );
+
       return;
     }
 
@@ -82,6 +97,11 @@ export class CharacterCreatorComponent implements OnInit {
       this.selectedItems.push({item: item, selectedColor: color});
 
     this.popoverItem = undefined;
+
+    this.renderer.render(
+      this.canvas.nativeElement,
+      this.selectedItems
+    );
   }
 
   removeItem() {
@@ -96,6 +116,11 @@ export class CharacterCreatorComponent implements OnInit {
       this.selectedItems.splice(index, 1);
 
     this.popoverItem = undefined;
+
+    this.renderer.render(
+      this.canvas.nativeElement,
+      this.selectedItems
+    );
   }
 
   isSelected(item: Item): boolean {
