@@ -221,7 +221,8 @@
                 "shadow": "/glasses/frame 1_shadow.png",
                 "fixed": "/glasses/lens 1.1.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 5
+                "group_id": 5,
+                "z_index": 1
             },
             {
                 "thumbnail": "/glasses/glasses 2_thumbnail.png",
@@ -229,35 +230,40 @@
                 "shadow": "/glasses/frame 1_shadow.png",
                 "fixed": "/glasses/lens 1.2.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 5
+                "group_id": 5,
+                "z_index": 1
             },
             {
                 "thumbnail": "/glasses/glasses 3_thumbnail.png",
                 "mask": "/glasses/frame 2_mask.png",
                 "fixed": "/glasses/lens 2.1.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 5
+                "group_id": 5,
+                "z_index": 1
             },
             {
                 "thumbnail": "/glasses/glasses 4_thumbnail.png",
                 "mask": "/glasses/frame 2_mask.png",
                 "fixed": "/glasses/lens 2.2.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 5
+                "group_id": 5,
+                "z_index": 1
             },
             {
                 "thumbnail": "/glasses/glasses 5_thumbnail.png",
                 "mask": "/glasses/frame 3_mask.png",
                 "fixed": "/glasses/lens 3.1.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 5
+                "group_id": 5,
+                "z_index": 1
             },
             {
                 "thumbnail": "/glasses/glasses 6_thumbnail.png",
                 "mask": "/glasses/frame 3_mask.png",
                 "fixed": "/glasses/lens 3.2.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 5
+                "group_id": 5,
+                "z_index": 1
             }
         ]
     },
@@ -296,42 +302,49 @@
             },
             {
                 "thumbnail": "/hats/hat 5_thumbnail.png",
-                "mask": "/hats/hat 5_mask.png",
-                "group_id": 6
+                "fixed": "/hats/hat 5.png",
+                "group_id": 6,
+                "z_index": 2
             },
             {
                 "thumbnail": "/hats/hat 6_thumbnail.png",
-                "mask": "/hats/hat 6_mask.png",
-                "group_id": 6
+                "fixed": "/hats/hat 6.png",
+                "group_id": 6,
+                "z_index": 2
             },
             {
                 "thumbnail": "/hats/hat 7_thumbnail.png",
                 "mask": "/hats/hat 7_mask.png",
                 "fixed": "/hats/hat 7_fixed.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 7
+                "group_id": 7,
+                "z_index": 1
             },
             {
                 "thumbnail": "/hats/hat 8_thumbnail.png",
                 "mask": "/hats/hat 8_mask.png",
                 "fixed": "/hats/hat 8_fixed.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 7
+                "group_id": 7,
+                "z_index": 1
             },
             {
                 "thumbnail": "/hats/hat 9_thumbnail.png",
-                "mask": "/hats/hat 9_mask.png",
-                "group_id": 8
+                "fixed": "/hats/hat 9.png",
+                "group_id": 6,
+                "z_index": 2
             },
             {
                 "thumbnail": "/hats/hat 10_thumbnail.png",
-                "mask": "/hats/hat 10_mask.png",
-                "group_id": 9
+                "fixed": "/hats/hat 10.png",
+                "group_id": 8,
+                "z_index": 2
             },
             {
                 "thumbnail": "/hats/hat 11_thumbnail.png",
-                "mask": "/hats/hat 11_mask.png",
-                "group_id": 9
+                "fixed": "/hats/hat 11.png",
+                "group_id": 6,
+                "z_index": 2
             }
         ]
     },
@@ -345,7 +358,8 @@
                 "mask": "/extra/blanket_mask.png",
                 "shadow": "/extra/blanket_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 10
+                "group_id": 10,
+                "z_index": 3
             },
             {
                 "thumbnail": "/extra/tie_thumbnail.png",
@@ -367,42 +381,50 @@
                 "shadow": "/extra/book_shadow.png",
                 "fixed": "/extra/book_fixed.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/camera_thumbnail.png",
                 "mask": "/extra/camera.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/cola_thumbnail.png",
                 "mask": "/extra/cola.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/donut_thumbnail.png",
                 "mask": "/extra/donut.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/doogh_thumbnail.png",
                 "mask": "/extra/doogh.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/joystick_thumbnail.png",
                 "mask": "/extra/joystick.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/paint_thumbnail.png",
                 "mask": "/extra/paint.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             },
             {
                 "thumbnail": "/extra/pizza_thumbnail.png",
                 "mask": "/extra/pizza.png",
-                "group_id": 12
+                "group_id": 12,
+                "z_index": 1
             }
         ]
     }

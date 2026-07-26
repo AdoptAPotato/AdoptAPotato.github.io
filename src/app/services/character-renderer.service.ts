@@ -83,6 +83,11 @@ export class CharacterRendererService {
   }
 
   async render(canvas: HTMLCanvasElement, equippedItems: EquippedItem[]) {
+    // TODO: sort equipped items by z index
+    equippedItems.sort(
+      (a, b) => (a.item.z_index ?? Number.MIN_SAFE_INTEGER) - (b.item.z_index ?? Number.MIN_SAFE_INTEGER)
+    );
+
     const ctx = canvas.getContext('2d');
 
     if (!ctx) {

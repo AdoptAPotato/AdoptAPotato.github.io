@@ -4,7 +4,8 @@ export interface Item {
   shadow?: string;
   fixed?: string;
   colors?: string[];
-  group_id: number;
+  group_id: number[];
+  z_index: number ;
 }
 
 export interface Category {
