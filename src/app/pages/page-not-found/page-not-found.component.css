@@ -1,3 +1,33 @@
-img {
+.not-found-img {
     max-height: 40vh;
+}
+
+.not-found-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.bg-svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+
+    height: 50vh;
+    max-width: none;
+}
+
+.not-found-container > :not(.bg-svg) {
+    position: relative;
+    z-index: 1;
 }
