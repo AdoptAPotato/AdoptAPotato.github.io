@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Tanha";
+  src: url("/fonts/Tanha/Tanha.woff2") format("woff2"),
+    url("/fonts/Tanha/Tanha.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: "Tanha", sans-serif;
+}
+
 .btn-primary {
   --bs-btn-bg: #a9bda0;
   --bs-btn-border-color: #a9bda0;

@@ -3,8 +3,8 @@ import { CommonModule, } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { NgbPopoverModule, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 
-import { Category, Item, EquippedItem } from '../models/creator';
-import { CharacterRendererService }  from '../services/character-renderer.service';
+import { Category, Item, EquippedItem } from '../../models/creator';
+import { CharacterRendererService }  from '../../services/character-renderer.service';
 
 @Component({
   selector: 'app-character-creator',
