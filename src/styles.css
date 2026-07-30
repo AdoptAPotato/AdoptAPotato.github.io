@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: "Tanha", sans-serif;
+  font-family: "Tanha", sans-serif;
 }
 
 .btn-primary {
@@ -34,6 +34,14 @@ body {
 
 .text-primary {
   color: #567c57 !important;
+}
+
+.bg-primary {
+  background-color: #567c57 !important;
+}
+
+.bg-secondary {
+  background-color: #eec8a3 !important;
 }
 
 .color-popover .popover-body {

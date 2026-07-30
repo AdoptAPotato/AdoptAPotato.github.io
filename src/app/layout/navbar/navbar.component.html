@@ -1,1 +1,48 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#mainNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="mainNavbar">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="btn nav-link" routerLink="/" routerLinkActive="active">
+          خانه
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="btn nav-link" routerLink="/potatoes" routerLinkActive="active">
+          سیب‌زمینی‌های آماده
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="btn nav-link" routerLink="/creator" routerLinkActive="active">
+          ساخت سیب‌زمینی سفارشی
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="btn nav-link" routerLink="/about" routerLinkActive="active">
+          درباره ما
+        </a>
+      </li>
+    </ul>
+
+    <div class="ms-4">
+      <a class="navbar-brand ms-auto" routerLink="/">
+      <img
+        src="/logo_light.png"
+        alt="Adopt a Potato"
+        class="logo_img">
+    </a>
+    </div>
+
+  </div>
+</nav>
