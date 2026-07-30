@@ -1,0 +1,32 @@
+.char-img {
+    width: 7rem;
+}
+
+.bg-svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+
+    height: 7rem;
+    max-width: none;
+}
+
+.img-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-container > :not(.bg-svg) {
+    position: relative;
+    z-index: 1;
+}

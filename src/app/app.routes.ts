@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CharacterCreatorComponent } from './pages/character-creator/character-creator.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'creator', component: CharacterCreatorComponent },
+      { path: 'about', component: AboutUsComponent },
       { path: '**', component: PageNotFoundComponent }
     ]
   }
