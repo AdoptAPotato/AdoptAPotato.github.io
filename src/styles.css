@@ -8,6 +8,7 @@
 
 body {
   font-family: "Tanha", sans-serif;
+  background: linear-gradient(180deg, #f1eee8 0%, #e9d9be 100%);
 }
 
 .btn-primary {
