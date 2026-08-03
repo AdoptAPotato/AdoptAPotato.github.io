@@ -1,9 +1,9 @@
-<section class="container py-4">
+<section class="hero-banner">
+    <div class="text-center hero-content">
 
-    <div class="text-center mb-5">
-        <h1 class="display-3 fw-bold text-primary mb-3">
-            <span class="h1" #title></span>
-            <span class="h1" #cursor>|</span>
+        <h1 class="display-3 fw-bold text-primary mb-5">
+            <span #title></span>
+            <span #cursor>|</span>
         </h1>
 
         <p class="lead">
@@ -13,21 +13,38 @@
             <br>
             یه سیب‌زمینی با شخصیت و خصوصیات ظاهری‌ای که دوست داری بسازی!
         </p>
+
     </div>
 
+    <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none">
+        <path
+            fill="#a9bda0"
+            d="
+                M0,0
+                H1440
+                V70
+                C1221,83 1106,62 715,71
+                C324,81 181,76 0,70
+                Z"/>
+    </svg>
+</section>
+
+<section class="container">
     <!-- Adopt -->
 
-    <div class="row align-items-center my-5">
+    <div class="row align-items-center">
 
         <div class="col-lg-5 text-center">
 
             <div class="img-container">
 
-                <img src="/fluid_primary.svg" class="bg-svg">
+                <img src="/fluid_secondary.svg" class="bg-svg">
 
-                <img
-                    src="/POTATO chan.png"
-                    class="hero-potato">
+                <div class="hero-container">
+                    <img #potato src="/POTATO chan.png" class="hero-potato">
+
+                    <img #sparkle src="/sparkle.png" class="sparkle">
+                </div>
 
             </div>
 
@@ -35,7 +52,7 @@
 
         <div class="col-lg-7">
 
-            <h2>✨ یه دوست جدید منتظرته!</h2>
+            <h2>🥔 یه دوست جدید منتظرته!</h2>
 
             <p>
                 هر سیب‌زمینی شخصیت، اسم و داستان خودش رو داره.
@@ -44,7 +61,7 @@
 
             <a
                 routerLink="/potatoes"
-                class="btn btn-primary btn-lg">
+                class="btn btn-secondary btn-lg">
                 بزن بریم!
             </a>
 
@@ -54,17 +71,19 @@
 
     <!-- Creator -->
 
-    <div class="row align-items-center my-5 flex-lg-row-reverse">
+    <div class="row align-items-center flex-lg-row-reverse">
 
         <div class="col-lg-5 text-center">
 
             <div class="img-container">
 
-                <img src="/fluid_secondary.svg" class="bg-svg">
+                <img src="/fluid_primary.svg" class="bg-svg">
 
-                <img
-                    src="/Anon POTATO.png"
-                    class="hero-potato">
+                <div class="hero-container">
+                    <img #potato src="/Anon POTATO.png" class="hero-potato">
+                    
+                    <img #sparkle src="/sparkle.png" class="sparkle">
+                </div>
 
             </div>
 
@@ -75,13 +94,13 @@
             <h2>🎨 سیب‌زمینی خودت رو بساز</h2>
 
             <p>
-                رنگ، لباس، عینک، کلاه و کلی جزئیات دیگه رو خودت انتخاب کن
+                قیافه، لباس، عینک، کلاه و کلی جزئیات دیگه رو خودت انتخاب کن
                 و یه سیب‌زمینی کاملاً منحصربه‌فرد داشته باش.
             </p>
 
             <a
                 routerLink="/creator"
-                class="btn btn-secondary btn-lg">
+                class="btn btn-primary btn-lg">
                 شروع ساخت
             </a>
 
@@ -91,7 +110,7 @@
 
     <!-- Bottom -->
 
-    <div class="text-center mt-5">
+    <div class="text-center my-5">
 
         <h4 class="mb-3">همه‌ سیب‌زمینی‌ها دست‌سازن و با عشق ساخته شدن ❤️</h4>
 

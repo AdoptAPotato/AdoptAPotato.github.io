@@ -1,7 +1,58 @@
-.hero-potato {
-    width: min(18rem, 75vw);
+.hero-banner {
     position: relative;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    height: 22rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-wave {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 25rem;
+
+    opacity: 30%;
+
     z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    width: min(18rem, 75vw);
+    aspect-ratio: 1;
+    margin: auto;
+}
+
+.hero-potato,
+.sparkle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero-potato {
+    z-index: 1;
+}
+
+.sparkle {
+    z-index: 2;
+    pointer-events: none;
 }
 
 .img-container {
