@@ -1,19 +1,52 @@
 <div class="p-5 text-center">
-  <app-creator-explanation></app-creator-explanation>
+  <div class="creator-steps">
+    <div class="step" [class.active]="currentStep >= 1">۱</div>
+    <div class="line" [class.active]="currentStep >= 2"></div>
+    <div class="step" [class.active]="currentStep >= 2">۲</div>
+    <div class="line" [class.active]="currentStep >= 3"></div>
+    <div class="step" [class.active]="currentStep >= 3">۳</div>
+  </div>
 
+  @if (currentStep === 1) {
+    <app-creator-explanation></app-creator-explanation>
+  }
 
-  <!-- <form>
-    <div class="form-group">
-      <label for="nameInput">اسم سیب‌زمینی</label>
-      <input 
-        class="form-control" 
-        id="nameInput"
-        name="nameInput"
-        [(ngModel)]="potatoName"
-      >
-    </div>
-  </form>
+  @if (currentStep === 2) {
+    <form>
+      <div class="form-group">
+        <label for="nameInput">اسم سیب‌زمینی</label>
+        <input 
+          class="form-control" 
+          id="nameInput"
+          name="nameInput"
+          [(ngModel)]="potatoName"
+        >
+      </div>
+    </form>
 
-  <app-creator-wizard [potatoName]="potatoName"></app-creator-wizard> -->
+    <app-creator-wizard [potatoName]="potatoName"></app-creator-wizard>
+  }
 
+  <div class="d-flex gap-3 justify-content-center">
+    <button
+      *ngIf="maxSteps > currentStep"
+      class="btn btn-primary btn-lg"
+      (click)="next()">
+      بعدی
+    </button>
+
+    <button
+      *ngIf="maxSteps === currentStep"
+      class="btn btn-primary btn-lg"
+      (click)="next()">
+      ثبت
+    </button>
+
+    <button
+      *ngIf="currentStep > 1"
+      class="btn btn-primary btn-lg"
+      (click)="previous()">
+      قبلی
+    </button>
+  </div>
 </div>
