@@ -1,0 +1,19 @@
+.hero-potato {
+    width: min(18rem, 75vw);
+    position: relative;
+    z-index: 1;
+}
+
+.img-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-svg {
+    position: absolute;
+    width: 120%;
+    opacity: .5;
+    z-index: 0;
+}
