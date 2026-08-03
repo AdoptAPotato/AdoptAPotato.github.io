@@ -69,14 +69,14 @@ ngx-file-drop {
   text-align: center;
 
   color: #567c57;
-  background: #fafdf8;
+  background: white;
 
   cursor: pointer;
   transition: .2s;
 }
 
 .upload-box:hover {
-    background: #f3f8f1;
+    background: #fafdf8;
 }
 
 .preview-grid {
@@ -177,4 +177,8 @@ ngx-file-drop {
   line-height: 1;
 
   transform: translateY(2px);
+}
+
+form {
+  min-width: 50%;
 }
