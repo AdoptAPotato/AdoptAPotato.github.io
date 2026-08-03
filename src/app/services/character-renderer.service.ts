@@ -82,7 +82,7 @@ export class CharacterRendererService {
     ctx?.drawImage(this.off, 0, 0);
   }
 
-  async render(canvas: HTMLCanvasElement, equippedItems: EquippedItem[]) {
+  async render(canvas: HTMLCanvasElement, equippedItems: EquippedItem[], text?: string) {
     equippedItems.sort(
       (a, b) => (a.item.z_index ?? Number.MIN_SAFE_INTEGER) - (b.item.z_index ?? Number.MIN_SAFE_INTEGER)
     );
@@ -113,5 +113,62 @@ export class CharacterRendererService {
         i.selectedColor!
       );
     }
+
+    if (text) {
+      this.drawText(ctx, text, canvas.width, canvas.height);
+    }
+  }
+
+  private drawText(ctx: CanvasRenderingContext2D, text: string, canvasWidth: number, canvasHeight: number) {
+    // Relative positioning based on base
+    const fixedX = canvasWidth * 0.5;
+    const fixedY = canvasHeight * 0.83;
+
+    const fontSize = Math.round(canvasWidth * 0.045);
+    
+    ctx.save();
+    
+    // Text styling
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `bold ${fontSize}px Trebuchet MS, sans-serif`;
+    
+    // Split text into lines
+    const maxWidth = canvasWidth * 0.25;
+    const lines = this.wrapText(ctx, text, maxWidth);
+    const lineHeight = fontSize * 1.3;
+    
+    // Draw each line
+    ctx.fillStyle = '#3e2a0f';
+    lines.forEach((line, index) => {
+      const y = fixedY + (index - (lines.length - 1) / 2) * lineHeight;
+      ctx.fillText(line, fixedX, y);
+    });
+    
+    ctx.restore();
+  }
+
+  private wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] {
+    const words = text.split(' ');
+    const lines: string[] = [];
+    let currentLine = '';
+
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const metrics = ctx.measureText(testLine);
+      
+      if (metrics.width > maxWidth && currentLine) {
+        lines.push(currentLine);
+        currentLine = word;
+      } else {
+        currentLine = testLine;
+      }
+    }
+    
+    if (currentLine) {
+      lines.push(currentLine);
+    }
+    
+    return lines;
   }
 }

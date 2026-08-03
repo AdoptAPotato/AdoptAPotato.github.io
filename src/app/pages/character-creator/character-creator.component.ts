@@ -5,10 +5,11 @@ import { NgbPopoverModule, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 
 import { Category, Item, EquippedItem } from '../../models/creator';
 import { CharacterRendererService }  from '../../services/character-renderer.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-character-creator',
-  imports: [CommonModule, NgbPopoverModule],
+  imports: [CommonModule, NgbPopoverModule, FormsModule],
   templateUrl: './character-creator.component.html',
   styleUrl: './character-creator.component.css'
 })
@@ -19,6 +20,8 @@ export class CharacterCreatorComponent implements OnInit {
   selectedCategory?: Category;
   popoverItem?: Item;
   openPopover?: NgbPopover;
+
+  potatoName: string = 'Max the POTATO';
 
   @ViewChild('canvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
@@ -39,11 +42,16 @@ export class CharacterCreatorComponent implements OnInit {
 
         this.selectedCategory = this.categories[0];
 
-        this.renderer.render(
-          this.canvas.nativeElement,
-          this.selectedItems
-        );
+        this.render()
       });
+  }
+
+  render() {
+    this.renderer.render(
+      this.canvas.nativeElement,
+      this.selectedItems,
+      this.potatoName
+    );
   }
 
   selectCategory(category: Category) {
@@ -83,10 +91,7 @@ export class CharacterCreatorComponent implements OnInit {
         this.selectedItems.splice(index, 1);
       }
 
-      this.renderer.render(
-        this.canvas.nativeElement,
-        this.selectedItems
-      );
+      this.render()
 
       return;
     }
@@ -98,10 +103,7 @@ export class CharacterCreatorComponent implements OnInit {
 
     this.popoverItem = undefined;
 
-    this.renderer.render(
-      this.canvas.nativeElement,
-      this.selectedItems
-    );
+    this.render()
   }
 
   removeItem() {
@@ -117,10 +119,7 @@ export class CharacterCreatorComponent implements OnInit {
 
     this.popoverItem = undefined;
 
-    this.renderer.render(
-      this.canvas.nativeElement,
-      this.selectedItems
-    );
+    this.render()
   }
 
   isSelected(item: Item): boolean {
