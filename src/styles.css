@@ -55,3 +55,8 @@ body {
 .color-popover .popover-body {
   padding: 0.5em;
 }
+
+input {
+  background-color: #fafdf8 !important;
+  border: 2px #a9bda0 !important;
+}

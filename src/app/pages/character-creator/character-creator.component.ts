@@ -7,7 +7,12 @@ import { CreatorExplanationComponent } from '../../components/creator-explanatio
 
 @Component({
   selector: 'app-character-creator',
-  imports: [CommonModule, FormsModule, CreatorWizardComponent, CreatorExplanationComponent],
+  imports: [
+    CommonModule, 
+    FormsModule,
+    CreatorWizardComponent, 
+    CreatorExplanationComponent
+  ],
   templateUrl: './character-creator.component.html',
   styleUrl: './character-creator.component.css'
 })
@@ -18,6 +23,13 @@ export class CharacterCreatorComponent {
   
   potatoName: string = 'Max the POTATO';
 
+  isDragging = false;
+
+  images: {
+    file: File;
+    preview: string;
+  }[] = [];
+
   next() {
     this.currentStep++;
   }
@@ -26,4 +38,60 @@ export class CharacterCreatorComponent {
     this.currentStep--;
   }
 
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+    this.isDragging = true;
+  }
+
+  onDragLeave(event: DragEvent) {
+    event.preventDefault();
+    this.isDragging = false;
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    this.isDragging = false;
+
+    if (!event.dataTransfer?.files.length) {
+      return;
+    }
+
+    this.addFiles(event.dataTransfer.files);
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+
+    if (!input.files?.length) {
+      return;
+    }
+
+    this.addFiles(input.files);
+
+    // Allows selecting the same file again later
+    input.value = '';
+  }
+
+  private addFiles(fileList: FileList) {
+    Array.from(fileList).forEach(file => {
+
+      if (!file.type.startsWith('image/')) {
+        return;
+      }
+
+      this.images.push({
+        file,
+        preview: URL.createObjectURL(file)
+      });
+
+    });
+  }
+
+  removeImage(image: { file: File; preview: string }, event: MouseEvent) {
+    event.stopPropagation();
+
+    URL.revokeObjectURL(image.preview);
+
+    this.images = this.images.filter(i => i !== image);
+  }
 }

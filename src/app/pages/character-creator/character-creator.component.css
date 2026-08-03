@@ -45,3 +45,76 @@
 .line.active {
     background: #567c57;
 }
+
+ngx-file-drop {
+  display: block;
+  width: 100%;
+  height: 12rem;
+}
+
+.upload-box {
+  width: 100%;
+  height: 100%;
+
+  border: 2px dashed #a9bda0;
+  border-radius: 1rem;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  color: #567c57;
+  background: #fafdf8;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.upload-box:hover {
+    background: #f3f8f1;
+}
+
+.preview-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.preview-card {
+  position: relative;
+}
+
+.preview-card img {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+
+  border-radius: .75rem;
+}
+
+.preview-card button {
+  position: absolute;
+  top: .25rem;
+  right: .25rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-card button i {
+  font-size: 1.4rem;
+  line-height: 1;
+
+  transform: translateY(2px);
+}
