@@ -11,7 +11,7 @@ gsap.registerPlugin(TextPlugin);
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent  implements AfterViewInit {
+export class HomeComponent implements AfterViewInit {
 
   @ViewChild('title') title!: ElementRef<HTMLSpanElement>;
   @ViewChild('cursor') cursor!: ElementRef<HTMLSpanElement>;

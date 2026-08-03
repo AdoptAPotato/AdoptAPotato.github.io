@@ -33,6 +33,13 @@ body {
   --bs-btn-active-border-color: #bb956e;
 }
 
+.alert-warning {
+  background-color: #eec8a3;
+  border-color: #dd9c7c;
+  color: black;
+  opacity: 70%;
+}
+
 .text-primary {
   color: #567c57 !important;
 }
