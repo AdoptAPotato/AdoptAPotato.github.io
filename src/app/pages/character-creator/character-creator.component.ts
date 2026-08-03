@@ -77,7 +77,7 @@ export class CharacterCreatorComponent implements OnInit {
       i => i.item.group_id === item.group_id
     );
 
-    if (index !== -1 && this.selectedItems[index].item === item) {
+    if (index !== -1 && !color && this.selectedItems[index].item === item) {
 
       if (category.nullable) {
         this.selectedItems.splice(index, 1);
