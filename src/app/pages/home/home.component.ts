@@ -21,6 +21,11 @@ export class HomeComponent  implements AfterViewInit {
   @ViewChildren('sparkle')
   sparkles!: QueryList<ElementRef<HTMLImageElement>>;
 
+  @ViewChildren('option')
+  options!: QueryList<ElementRef<HTMLImageElement>>;
+
+  @ViewChild('bottom') bottom!: ElementRef<HTMLDivElement>;
+
   ngAfterViewInit() {
     const tl = gsap.timeline();
 
@@ -32,8 +37,22 @@ export class HomeComponent  implements AfterViewInit {
       autoAlpha: 0
     });
 
+    this.options.forEach(option => {
+      gsap.from(option.nativeElement, {
+        y: 80,
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.9,
+        ease: "back.out(1.6)",
+        scrollTrigger: {
+          trigger: option.nativeElement,
+          start: "top 75%",
+          toggleActions: "play none none none"
+        }
+      });
+    });
 
-    this.potatoes.forEach((potato, i) => {
+    this.potatoes.forEach((potato, _) => {
       gsap.to(potato.nativeElement, {
         y: -5 - Math.random() * 6,
         duration: 3.5 + Math.random(),
@@ -44,7 +63,7 @@ export class HomeComponent  implements AfterViewInit {
       });
     });
 
-    this.sparkles.forEach((sparkle, i) => {
+    this.sparkles.forEach((sparkle, _) => {
       gsap.to(sparkle.nativeElement, {
         y: -5 - Math.random() * 4,
         rotation: gsap.utils.random(-8, 8),
@@ -55,6 +74,20 @@ export class HomeComponent  implements AfterViewInit {
         ease: 'sine.inOut',
         delay: Math.random()
       });
+    });
+
+    gsap.from(this.bottom.nativeElement, {
+      y: 100,
+      opacity: 0,
+      scale: 0.8,
+      rotation: 5,
+      duration: 1.2,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: this.bottom.nativeElement,
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
     });
   }
 
