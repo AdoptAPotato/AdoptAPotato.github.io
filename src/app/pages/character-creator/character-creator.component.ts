@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { CreatorWizardComponent } from '../../components/creator-wizard/creator-wizard.component';
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
+import { NeededItem } from '../../models/creator';
 
 @Component({
   selector: 'app-character-creator',
@@ -29,6 +30,8 @@ export class CharacterCreatorComponent {
     file: File;
     preview: string;
   }[] = [];
+
+  neededItems: NeededItem[] = [];
 
   next() {
     this.currentStep++;
@@ -93,5 +96,33 @@ export class CharacterCreatorComponent {
     URL.revokeObjectURL(image.preview);
 
     this.images = this.images.filter(i => i !== image);
+  }
+
+  addItem() {
+    this.neededItems.push({
+      title: '',
+      description: ''
+    });
+  }
+
+
+  removeItem(index: number) {
+    this.neededItems.splice(index, 1);
+  }
+
+
+  onItemImageSelected(event: Event, item: NeededItem) {
+    const input = event.target as HTMLInputElement;
+
+    if (!input.files?.length) {
+      return;
+    }
+
+    const file = input.files[0];
+
+    item.image = file;
+    item.preview = URL.createObjectURL(file);
+
+    input.value = '';
   }
 }

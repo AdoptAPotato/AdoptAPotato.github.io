@@ -14,7 +14,7 @@
   @if (currentStep === 2) {
     <form>
       <div class="form-group mb-4">
-        <label for="nameInput">اسم سیب‌زمینی</label>
+        <label for="nameInput" class="form-label">اسم سیب‌زمینی</label>
 
         <input
           class="form-control"
@@ -24,7 +24,7 @@
       </div>
 
       <div class="form-group mb-4">
-        <label for="fileInput">هر عکس رفرنسی که داری که می‌تونه به دقیق‌تر ساختن چیزی که توی ذهنته به ما کمک کنه این‌جا آپلود کن</label>
+        <label for="fileInput" class="form-label">هر عکس رفرنسی که داری که می‌تونه به دقیق‌تر ساختن چیزی که توی ذهنته به ما کمک کنه این‌جا آپلود کن</label>
 
         <div class="upload-box"
           [class.drag-over]="isDragging"
@@ -68,6 +68,71 @@
           multiple
           hidden
           (change)="onFileSelected($event)">
+      </div>
+
+      <div class="needed-items mb-4">
+
+  <label class="form-label">
+    اگر آیتمی مد نظرته که اینجا پیداش نمی‌کنی، می‌تونی اون رو از این قسمت اضافه کنی
+  </label>
+
+  <div
+    class="needed-item-row"
+    *ngFor="let item of neededItems; let i = index">
+
+    <input
+      class="form-control"
+      placeholder="نام آیتم"
+      [(ngModel)]="item.title"
+      name="itemName">
+
+    <input
+      class="form-control"
+      placeholder="توضیح کوتاه"
+      [(ngModel)]="item.description"
+      name="itemDescription">
+
+    <label class="btn btn-outline-secondary upload-btn mb-0">
+      <i class="bi bi-image"></i>
+
+      <input
+        hidden
+        type="file"
+        accept="image/*"
+        (change)="onItemImageSelected($event, item)">
+    </label>
+
+    <div class="reference-image">
+      <img *ngIf="item.preview" [src]="item.preview">
+      <i *ngIf="!item.preview"></i>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-danger remove-btn"
+      (click)="removeItem(i)">
+      <i class="bi bi-x"></i>
+    </button>
+
+  </div>
+
+  <div>
+    <button
+    class="btn btn-primary mt-2"
+    type="button"
+    (click)="addItem()">
+
+    <i class="bi bi-plus"></i>
+    اضافه کردن آیتم
+
+  </button>
+  </div>
+
+</div>
+
+      <div class="mb-4">
+        <label for="descriptionTextarea" class="form-label">هر توضیح دیگه‌ای که لازم می‌دونی بدونیم رو اینجا اضافه کن (ویژگی‌های مهم، رنگ متفاوت برای آیتم‌ها و...)</label>
+        <textarea class="form-control" id="descriptionTextarea" rows="3"></textarea>
       </div>
     </form>
 
