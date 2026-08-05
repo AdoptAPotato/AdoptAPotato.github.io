@@ -17,6 +17,7 @@
         <option disabled selected>
           انتخاب ماه
         </option>
+        
         <option *ngFor="let month of months">
           {{ month }}
         </option>
@@ -34,8 +35,12 @@
         <option disabled selected>
           انتخاب تیپ
         </option>
-        <option *ngFor="let type of mbtiTypes">
-          {{ type }}
+        
+        <option
+          *ngFor="let type of mbtiTypes"
+          [ngValue]="type.code"
+          [style.color]="type.color">
+          {{ type.code }} - {{ type.name }}
         </option>
       </select>
     </div>
