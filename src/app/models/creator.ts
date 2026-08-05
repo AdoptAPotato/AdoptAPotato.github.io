@@ -20,9 +20,9 @@ export interface EquippedItem {
   selectedColor: string | null;
 }
 
-export interface NeededItem {
-  title: string;
+export interface ExtraItem {
   description: string;
+  isCustom: boolean;
   image?: File;
   preview?: string;
 }

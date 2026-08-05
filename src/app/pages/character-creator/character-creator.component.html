@@ -74,18 +74,34 @@
         <div class="needed-items mb-4">
 
           <label class="form-label">
-            اگر آیتمی مد نظرته که اینجا پیداش نمی‌کنی، می‌تونی اون رو از این قسمت اضافه کنی
+            اگر می‌خوای تعداد بیش‌تری از آیتم‌های آماده رو همزمان داشته باشی یا آیتمی مد نظر داری که پیداش نمی‌کنی (آیتم سفارشی)، می‌تونی از این‌جا اضافش کنی
           </label>
 
           <div
             class="needed-item-row"
-            *ngFor="let item of neededItems; let i = index">
+            *ngFor="let item of ExtraItems; let i = index">
 
-            <input
-              class="form-control"
-              placeholder="نام آیتم"
-              [(ngModel)]="item.title"
-              name="itemName">
+            <div class="item-type-group d-flex flex-wrap">
+              <label class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  [name]="'itemType' + i"
+                  [(ngModel)]="item.isCustom"
+                  [value]="false">
+                <span class="form-check-label">آماده</span>
+              </label>
+
+              <label class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  [name]="'itemType' + i"
+                  [(ngModel)]="item.isCustom"
+                  [value]="true">
+                <span class="form-check-label">سفارشی</span>
+              </label>
+            </div>
 
             <input
               class="form-control"
@@ -93,20 +109,24 @@
               [(ngModel)]="item.description"
               name="itemDescription">
 
-            <label class="btn btn-outline-secondary upload-btn mb-0">
-              <i class="bi bi-image"></i>
+            <label class="reference-image upload-btn">
 
               <input
                 hidden
                 type="file"
                 accept="image/*"
                 (change)="onItemImageSelected($event, item)">
-            </label>
 
-            <div class="reference-image">
-              <img *ngIf="item.preview" [src]="item.preview">
-              <i *ngIf="!item.preview"></i>
-            </div>
+              <img
+                *ngIf="item.preview"
+                [src]="item.preview"
+                alt="Reference image">
+
+              <i
+                *ngIf="!item.preview"
+                class="bi bi-image"></i>
+
+            </label>
 
             <button
               type="button"

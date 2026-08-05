@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { CreatorWizardComponent } from '../../components/creator-wizard/creator-wizard.component';
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
-import { NeededItem } from '../../models/creator';
+import { ExtraItem } from '../../models/creator';
 
 @Component({
   selector: 'app-character-creator',
@@ -31,7 +31,7 @@ export class CharacterCreatorComponent {
     preview: string;
   }[] = [];
 
-  neededItems: NeededItem[] = [];
+  ExtraItems: ExtraItem[] = [];
 
   next() {
     this.currentStep++;
@@ -99,19 +99,19 @@ export class CharacterCreatorComponent {
   }
 
   addItem() {
-    this.neededItems.push({
-      title: '',
-      description: ''
+    this.ExtraItems.push({
+      description: '',
+      isCustom: false
     });
   }
 
 
   removeItem(index: number) {
-    this.neededItems.splice(index, 1);
+    this.ExtraItems.splice(index, 1);
   }
 
 
-  onItemImageSelected(event: Event, item: NeededItem) {
+  onItemImageSelected(event: Event, item: ExtraItem) {
     const input = event.target as HTMLInputElement;
 
     if (!input.files?.length) {

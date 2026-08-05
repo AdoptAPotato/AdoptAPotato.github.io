@@ -1,49 +1,49 @@
 .creator-steps {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    margin: 2rem auto 3rem;
-    max-width: 40rem;
+  margin: 2rem auto 3rem;
+  max-width: 40rem;
 }
 
 .step {
-    width: 4rem;
-    height: 4rem;
+  width: 4rem;
+  height: 4rem;
 
-    border-radius: 50%;
-    border: 4px dashed #dd9c7c;
-    background: #eec8a3;
+  border-radius: 50%;
+  border: 4px dashed #dd9c7c;
+  background: #eec8a3;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    transition: all .3s;
+  transition: all .3s;
 }
 
 .step.active {
-    background: #a9bda0;
-    border: 4px dashed #567c57;
-    color: white;
+  background: #a9bda0;
+  border: 4px dashed #567c57;
+  color: white;
 
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .line {
-    flex: 1;
-    height: .35rem;
+  flex: 1;
+  height: .35rem;
 
-    margin: 0 .5rem;
+  margin: 0 .5rem;
 
-    border-radius: 999px;
-    background: #d8d8d8;
+  border-radius: 999px;
+  background: #d8d8d8;
 
-    transition: background .3s ease;
+  transition: background .3s ease;
 }
 
 .line.active {
-    background: #567c57;
+  background: #567c57;
 }
 
 ngx-file-drop {
@@ -76,7 +76,7 @@ ngx-file-drop {
 }
 
 .upload-box:hover {
-    background: #fafdf8;
+  background: #fafdf8;
 }
 
 .preview-grid {
@@ -130,32 +130,37 @@ ngx-file-drop {
 }
 
 .upload-btn {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2.45rem;
+  height: 2.45rem;
 
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
 
   padding: 0;
+  margin: 0;
+
+  border: 0.15rem dashed #a9bda0;
+  border-radius: .5rem;
+
+  cursor: pointer;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.upload-btn:hover {
+  background: #f8f8f8;
+  border-color: #567c57;
 }
 
 .upload-btn i {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #567c57;
+  display: block;
+  line-height: 1;
 }
 
-.reference-image {
-  width: 2.3rem;
-  height: 2.3rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  overflow: hidden;
-}
-
-.reference-image img {
+.upload-btn img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -180,5 +185,18 @@ ngx-file-drop {
 }
 
 form {
-  min-width: 50%;
+  flex: 1 1 50%;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 50%;
+}
+
+.form-check-input {
+  margin: 0;
 }
