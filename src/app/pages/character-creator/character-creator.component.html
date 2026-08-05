@@ -159,6 +159,18 @@
       </form>
 
       <app-creator-wizard></app-creator-wizard>
+
+      <table class="table pricing-table text-warning mt-3">
+        <tr *ngFor="let row of pricingService.getBreakdown().breakdown">
+          <td class="ps-5">{{ row.title }}</td>
+          <td>{{ row.cost.toLocaleString('fa-IR') }}</td>
+        </tr>
+
+        <tr class="fw-bold">
+          <td class="ps-5">جمع</td>
+          <td>{{ pricingService.getBreakdown().total.toLocaleString('fa-IR') }} تومان</td>
+        </tr>
+      </table>
     </div>
   }
 

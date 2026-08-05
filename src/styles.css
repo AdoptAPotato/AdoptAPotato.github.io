@@ -44,6 +44,10 @@ body {
   color: #567c57 !important;
 }
 
+.text-warning {
+  color: #d24d49 !important;
+}
+
 .bg-primary {
   background-color: #567c57 !important;
 }

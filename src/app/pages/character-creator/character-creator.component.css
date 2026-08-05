@@ -200,3 +200,10 @@ form {
 .form-check-input {
   margin: 0;
 }
+
+.pricing-table {
+  width: fit-content;
+  table-layout: auto;
+
+  font-size: large;
+}

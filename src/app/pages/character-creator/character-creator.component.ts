@@ -6,6 +6,7 @@ import { CreatorWizardComponent } from '../../components/creator-wizard/creator-
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
 import { ExtraItem } from '../../models/creator';
 import { CreatorStateService } from '../../services/creator-state.service';
+import { PricingService } from '../../services/pricing.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -30,7 +31,10 @@ export class CharacterCreatorComponent {
     preview: string;
   }[] = [];
 
-  constructor(public state: CreatorStateService) {}
+  constructor(
+    public state: CreatorStateService,
+    public pricingService: PricingService
+  ) {}
 
   next() {
     this.currentStep++;
