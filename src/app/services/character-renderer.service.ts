@@ -12,7 +12,7 @@ export class CharacterRendererService {
   private off = document.createElement('canvas');
   private offCtx = this.off.getContext('2d')!;
 
-  constructor() { }
+  public lastRenderedImage: string | null = null;
 
   private async loadImage(src: string): Promise<HTMLImageElement> {
     const cached = this.imageCache.get(src);
@@ -117,6 +117,8 @@ export class CharacterRendererService {
     if (text) {
       this.drawText(ctx, text, canvas.width, canvas.height);
     }
+
+    this.lastRenderedImage = canvas.toDataURL('image/png');
   }
 
   private drawText(ctx: CanvasRenderingContext2D, text: string, canvasWidth: number, canvasHeight: number) {

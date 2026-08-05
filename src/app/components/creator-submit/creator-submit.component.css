@@ -1,0 +1,39 @@
+.img-container {
+    width: 15rem;
+    height: 15rem;
+
+    overflow: hidden;
+    position: relative;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.final-potato {
+    width: 15rem;
+    
+    transform: scale(3);
+    transform-origin: 49% 2%;
+    transition: transform 0.3s;
+}
+
+.rays {
+    width: 15rem;
+    
+    position: absolute;
+    
+    z-index: 0;
+    pointer-events: none;
+
+    animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

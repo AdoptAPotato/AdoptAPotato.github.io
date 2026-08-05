@@ -19,6 +19,10 @@
     <app-personality-creator></app-personality-creator>
   }
 
+  @if (currentStep === 4) {
+    <app-creator-submit></app-creator-submit>
+  }
+
   <div class="d-flex gap-3 justify-content-center">
     <button
       *ngIf="maxSteps > currentStep"
@@ -35,7 +39,7 @@
     </button>
 
     <button
-      *ngIf="currentStep > 1"
+      *ngIf="currentStep > 1 && maxSteps > currentStep"
       class="btn btn-primary btn-lg"
       (click)="previous()">
       قبلی
