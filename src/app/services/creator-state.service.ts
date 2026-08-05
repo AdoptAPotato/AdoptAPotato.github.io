@@ -19,5 +19,7 @@ export class CreatorStateService {
   weaknesses: string[] = [];
 
   boxWidth: number = 4;
+
+  orderID: number = 1234;
   
 }

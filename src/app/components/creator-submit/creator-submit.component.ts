@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { CharacterRendererService } from '../../services/character-renderer.service';
+import { CreatorStateService } from '../../services/creator-state.service';
 
 @Component({
   selector: 'app-creator-submit',
@@ -10,6 +11,9 @@ import { CharacterRendererService } from '../../services/character-renderer.serv
 })
 export class CreatorSubmitComponent {
 
-  constructor(public renderer:CharacterRendererService) {}
+  constructor(
+    public state: CreatorStateService,
+    public renderer:CharacterRendererService
+  ) {}
 
 }
