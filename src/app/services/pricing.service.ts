@@ -7,7 +7,13 @@ import { CreatorStateService } from './creator-state.service';
 })
 export class PricingService {
 
-  basicCost = 300;
+  basicCost: Record<number, number> = {
+    4: 300,
+    5: 325,
+    6: 350,
+    7: 375,
+    8: 400
+  };
 
   readyItemCost = 100;
 
@@ -22,8 +28,8 @@ export class PricingService {
     const breakdown = [];
 
     breakdown.push({
-      title: 'هزینه پایه',
-      cost: this.basicCost
+      title: 'هزینه پایه (بر حسب سایز جعبه)',
+      cost: this.basicCost[this.state.boxWidth]
     });
 
     const readyCount =
