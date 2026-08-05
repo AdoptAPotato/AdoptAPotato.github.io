@@ -1,0 +1,30 @@
+.tag-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: .5rem;
+}
+
+.tag-input input {
+  border: none;
+  outline: none;
+
+  flex: 1;
+}
+
+.tag-input .badge {
+  cursor: default;
+
+  height: 38px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: small;
+}
+
+.tag-input i {
+  cursor: pointer;
+}

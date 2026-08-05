@@ -1,0 +1,131 @@
+<h4>حالا از شخصیت سیب‌زمینیت بیش‌تر برامون بگو</h4>
+<p>
+    هر کدوم از ورودی‌های زیر رو که دوست داشتی پر کن. این بهمون کمک می‌کنه که اون رو دقیق‌تر بسازیم و کارت شناساییش رو برات آماده کنیم!
+</p>
+
+<div class="personality-form py-5">
+
+  <div class="row g-3">
+
+    <!-- Birth month -->
+    <div class="col-md-6">
+      <label class="form-label">
+        ماه تولد
+      </label>
+
+      <select class="form-select">
+        <option disabled selected>
+          انتخاب ماه
+        </option>
+        <option *ngFor="let month of months">
+          {{ month }}
+        </option>
+      </select>
+    </div>
+
+
+    <!-- MBTI -->
+    <div class="col-md-6">
+      <label class="form-label">
+        تیپ شخصیتی MBTI
+      </label>
+
+      <select class="form-select">
+        <option disabled selected>
+          انتخاب تیپ
+        </option>
+        <option *ngFor="let type of mbtiTypes">
+          {{ type }}
+        </option>
+      </select>
+    </div>
+
+
+    <!-- Strengths -->
+    <div class="col-md-6">
+      <label class="form-label">
+        نقاط قوت
+      </label>
+
+      <input
+        class="form-control"
+        placeholder="افزودن نقطه قوت..."
+        (keydown.enter)="addStrength($event)">
+
+      <div class="tag-input mt-2">
+        <div
+          class="badge bg-primary"
+          *ngFor="let strength of state.strengths">
+
+          {{ strength }}
+
+          <i
+            class="bi bi-x me-1"
+            (click)="removeStrength(strength)">
+          </i>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Weaknesses -->
+    <div class="col-md-6">
+      <label class="form-label">
+        نقاط ضعف
+      </label>
+
+      <input
+        class="form-control"
+        placeholder="افزودن نقطه ضعف..."
+        (keydown.enter)="addWeakness($event)">
+
+      <div class="tag-input mt-2">
+        <div
+          class="badge bg-secondary"
+          *ngFor="let weakness of state.weaknesses">
+
+          {{ weakness }}
+
+          <i
+            class="bi bi-x me-1"
+            (click)="removeWeakness(weakness)">
+          </i>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Favorite food -->
+    <div class="col-md-6">
+      <label class="form-label">
+        خوراکی مورد علاقه
+      </label>
+
+      <input class="form-control">
+    </div>
+
+
+    <!-- Hobby -->
+    <div class="col-md-6">
+      <label class="form-label">
+        سرگرمی مورد علاقه
+      </label>
+
+      <input class="form-control">
+    </div>
+
+
+    <!-- Fun fact -->
+    <div class="col-12">
+      <label class="form-label">
+        یه فکت جالب درباره این شخصیت
+      </label>
+
+      <input class="form-control">
+    </div>
+
+  </div>
+
+</div>

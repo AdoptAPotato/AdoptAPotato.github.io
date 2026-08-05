@@ -13,5 +13,9 @@ export class CreatorStateService {
   equippedItems: EquippedItem[] = [];
 
   extraItems: ExtraItem[] = [];
+
+  strengths: string[] = [];
+
+  weaknesses: string[] = [];
   
 }

@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
 import { LookCreatorComponent } from '../../components/look-creator/look-creator.component';
+import { PersonalityCreatorComponent } from '../../components/personality-creator/personality-creator.component';
 
 @Component({
   selector: 'app-character-creator',
   imports: [
     CommonModule,
     CreatorExplanationComponent,
-    LookCreatorComponent
+    LookCreatorComponent,
+    PersonalityCreatorComponent
   ],
   templateUrl: './character-creator.component.html',
   styleUrl: './character-creator.component.css'
