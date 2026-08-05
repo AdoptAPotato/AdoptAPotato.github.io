@@ -19,6 +19,8 @@ import { PricingService } from '../../services/pricing.service';
 })
 export class LookCreatorComponent {
 
+  widths = [4, 5, 6, 7, 8]
+
   isDragging = false;
   
   images: {

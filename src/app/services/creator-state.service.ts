@@ -17,5 +17,7 @@ export class CreatorStateService {
   strengths: string[] = [];
 
   weaknesses: string[] = [];
+
+  boxWidth: number = 4;
   
 }
