@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { CreatorWizardComponent } from '../../components/creator-wizard/creator-wizard.component';
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
 import { ExtraItem } from '../../models/creator';
+import { CreatorStateService } from '../../services/creator-state.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -20,9 +21,7 @@ import { ExtraItem } from '../../models/creator';
 export class CharacterCreatorComponent {
 
   currentStep: number = 1;
-  maxSteps: number = 3
-  
-  potatoName: string = 'Max the POTATO';
+  maxSteps: number = 3;
 
   isDragging = false;
 
@@ -31,7 +30,7 @@ export class CharacterCreatorComponent {
     preview: string;
   }[] = [];
 
-  ExtraItems: ExtraItem[] = [];
+  constructor(public state: CreatorStateService) {}
 
   next() {
     this.currentStep++;
@@ -99,7 +98,7 @@ export class CharacterCreatorComponent {
   }
 
   addItem() {
-    this.ExtraItems.push({
+    this.state.extraItems.push({
       description: '',
       isCustom: false
     });
@@ -107,7 +106,7 @@ export class CharacterCreatorComponent {
 
 
   removeItem(index: number) {
-    this.ExtraItems.splice(index, 1);
+    this.state.extraItems.splice(index, 1);
   }
 
 

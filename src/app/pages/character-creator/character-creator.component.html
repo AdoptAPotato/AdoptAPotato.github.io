@@ -21,7 +21,8 @@
             class="form-control"
             id="nameInput"
             name="nameInput"
-            [(ngModel)]="potatoName">
+            [ngModel]="state.potatoName()"
+            (ngModelChange)="state.potatoName.set($event)">
         </div>
 
         <div class="form-group mb-4">
@@ -79,7 +80,7 @@
 
           <div
             class="needed-item-row"
-            *ngFor="let item of ExtraItems; let i = index">
+            *ngFor="let item of state.extraItems; let i = index">
 
             <div class="item-type-group d-flex flex-wrap">
               <label class="form-check">
@@ -157,7 +158,7 @@
         </div>
       </form>
 
-      <app-creator-wizard [potatoName]="potatoName"></app-creator-wizard>
+      <app-creator-wizard></app-creator-wizard>
     </div>
   }
 

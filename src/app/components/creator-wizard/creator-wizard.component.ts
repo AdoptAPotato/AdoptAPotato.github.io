@@ -1,10 +1,12 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { NgbPopoverModule, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
+import { effect } from '@angular/core';
 
-import { Category, Item, EquippedItem } from '../../models/creator';
+import { Category, Item } from '../../models/creator';
 import { CharacterRendererService }  from '../../services/character-renderer.service';
+import { CreatorStateService } from '../../services/creator-state.service';
 
 @Component({
   selector: 'app-creator-wizard',
@@ -14,25 +16,32 @@ import { CharacterRendererService }  from '../../services/character-renderer.ser
 })
 export class CreatorWizardComponent implements OnInit {
 
-  @Input() potatoName = '';
-
   @ViewChild('canvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
 
   categories: Category[] = [];
-  selectedItems: EquippedItem[] = [];
   selectedCategory?: Category;
   popoverItem?: Item;
   openPopover?: NgbPopover;
 
-  constructor(private http: HttpClient, private renderer:CharacterRendererService) {}
+  constructor(
+    private http: HttpClient, 
+    private renderer:CharacterRendererService,
+    private state: CreatorStateService
+  ) {
+    effect(() => {
+      this.state.potatoName();
+
+      this.render();
+    });
+  }
 
   ngOnInit(): void {
     this.http.get<Category[]>('/data/creator-info.json')
       .subscribe(data => {
         this.categories = data;
 
-        this.selectedItems = this.categories
+        this.state.equippedItems = this.categories
           .filter(c => !c.nullable)
           .map(c => ({
             item: c.items[0],
@@ -48,8 +57,8 @@ export class CreatorWizardComponent implements OnInit {
   render() {
     this.renderer.render(
       this.canvas.nativeElement,
-      this.selectedItems,
-      this.potatoName
+      this.state.equippedItems,
+      this.state.potatoName()
     );
   }
 
@@ -80,14 +89,14 @@ export class CreatorWizardComponent implements OnInit {
   equipItem(item: Item, color: string | null) {
     const category = this.selectedCategory!;
 
-    const index = this.selectedItems.findIndex(
+    const index = this.state.equippedItems.findIndex(
       i => i.item.group_id === item.group_id
     );
 
-    if (index !== -1 && !color && this.selectedItems[index].item === item) {
+    if (index !== -1 && !color && this.state.equippedItems[index].item === item) {
 
       if (category.nullable) {
-        this.selectedItems.splice(index, 1);
+        this.state.equippedItems.splice(index, 1);
       }
 
       this.render()
@@ -96,9 +105,9 @@ export class CreatorWizardComponent implements OnInit {
     }
 
     if (index !== -1)
-      this.selectedItems[index] = {item: item, selectedColor: color};
+      this.state.equippedItems[index] = {item: item, selectedColor: color};
     else
-      this.selectedItems.push({item: item, selectedColor: color});
+      this.state.equippedItems.push({item: item, selectedColor: color});
 
     this.popoverItem = undefined;
 
@@ -109,12 +118,12 @@ export class CreatorWizardComponent implements OnInit {
     if (!this.popoverItem)
       return;
 
-    const index = this.selectedItems.findIndex(
+    const index = this.state.equippedItems.findIndex(
       i => i.item.group_id === this.popoverItem!.group_id
     );
 
     if (index !== -1)
-      this.selectedItems.splice(index, 1);
+      this.state.equippedItems.splice(index, 1);
 
     this.popoverItem = undefined;
 
@@ -122,13 +131,7 @@ export class CreatorWizardComponent implements OnInit {
   }
 
   isSelected(item: Item): boolean {
-    return this.selectedItems.some(i => i.item === item);
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['potatoName']) {
-      this.render();
-    }
+    return this.state.equippedItems.some(i => i.item === item);
   }
 
 }
