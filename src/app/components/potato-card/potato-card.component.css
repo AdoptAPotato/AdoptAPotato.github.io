@@ -1,0 +1,225 @@
+.potato-card {
+
+    width: 290px;
+
+    height: fit-content;
+
+    border-radius: 24px;
+    padding: 10px;
+    border-radius: 24px;
+
+    background: linear-gradient(
+        135deg,
+        #7fae80,
+        #567c57,
+        #355436
+    );
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.22),
+        inset 0 2px rgba(255,255,255,.2);
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+
+}
+
+.potato-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,.16);
+
+}
+
+.potato-card:active {
+
+    transform:
+        scale(.97);
+
+}
+
+
+.card-inner {
+
+    border-radius: 18px;
+
+    background-size: cover;
+    background-position: center;
+
+    height: fit-content;
+
+}
+
+
+
+
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.card-top h5 {
+    flex: 1;
+
+    margin: 0;
+    margin-right: 5px;
+
+    text-align: right;
+}
+
+
+.mbti-badge {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1;
+
+    color: white;
+
+    padding: 0 .8rem;
+    padding-top: 0.2rem;
+
+    margin-left: -7px;
+
+    border-radius: 1em;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+
+}
+
+
+
+
+
+.element-badge {
+    width: 2.2em;
+    height: 2.2em;
+
+    margin-right: 2px;
+    margin-top: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.6),
+        0 0 14px rgba(255,255,255,.3);
+
+    backdrop-filter: blur(2px);
+}
+
+
+.element-badge img{
+
+    width: 70%;
+
+}
+
+
+
+
+
+.image-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+
+
+.potato-image{
+
+    width: 100%;
+
+    object-fit:contain;
+
+    border-radius: 15px;
+
+    filter:
+        drop-shadow(0 10px 12px rgba(0,0,0,.22));
+
+}
+
+
+
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:separate;
+
+    border-spacing:0;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.info-table td{
+
+    padding:.65rem .9rem;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+.info-table tr:not(:last-child) td{
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+}
+
+
+
+
+
+.info-table td:last-child{
+
+    text-align:left;
+
+}
+
+
+
+
+
+.info-table td:first-child{
+
+    width:40%;
+
+    color:#666;
+
+}

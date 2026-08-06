@@ -1,0 +1,58 @@
+<div class="potato-card">
+
+  <div 
+    class="card-inner"
+    [style.backgroundImage]="'url(' + '/textures/' + potato.birthMonth.element.img + '.jpg)'">
+
+    <div class="card-top">
+
+        <div
+            class="element-badge"
+            [style.background]="potato.birthMonth.element.color + '88'">
+
+            <img
+            [src]="'/elements/' + potato.birthMonth.element.img + '.png'"
+            [alt]="potato.birthMonth.element.name">
+
+        </div>
+
+        <h5><b>{{ potato.name }}</b></h5>
+
+      <span
+        class="mbti-badge"
+        [style.background]="potato.mbti.color">
+
+        {{ potato.mbti.code }}
+
+      </span>
+
+    </div>
+
+    <div class="p-2">
+        <div class="image-wrapper">
+
+        <img
+            class="potato-image"
+            [src]="potato.image"
+            [alt]="potato.name">
+
+        </div>
+
+        <table class="info-table">
+
+            <tr>
+                <td>قیمت</td>
+                <td>{{ potato.price.toLocaleString('fa-IR') }} تومان</td>
+            </tr>
+
+            <tr>
+                <td>سایز</td>
+                <td>{{ potato.size }}</td>
+            </tr>
+
+        </table>
+    </div>
+
+  </div>
+
+</div>
