@@ -14,11 +14,19 @@ import { MBTI_TYPES, ELEMENTS, MONTHS } from '../../data/constants';
 })
 export class PersonalityCreatorComponent {
 
-  mbtiTypes = MBTI_TYPES
-  elements = ELEMENTS;
-  months = MONTHS;
-
   constructor(public state: CreatorStateService) {}
+
+  get mbtiTypes() {
+    return MBTI_TYPES;
+  }
+
+  get elements() {
+    return ELEMENTS;
+  }
+
+  get months() {
+    return MONTHS;
+  }
 
   addStrength(event: Event) {
     const input = event.target as HTMLInputElement;

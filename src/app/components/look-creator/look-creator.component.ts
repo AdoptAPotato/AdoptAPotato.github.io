@@ -20,8 +20,6 @@ import { WIDTHS } from '../../data/constants';
 })
 export class LookCreatorComponent {
 
-  widths = WIDTHS
-
   isDragging = false;
   
   images: {
@@ -33,6 +31,10 @@ export class LookCreatorComponent {
     public state: CreatorStateService,
     public pricingService: PricingService
   ) {}
+
+  get widths() {
+    return WIDTHS;
+  }
 
   onDragOver(event: DragEvent) {
     event.preventDefault();
