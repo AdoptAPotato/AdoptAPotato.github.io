@@ -53,7 +53,7 @@ export class AboutUsComponent implements AfterViewInit {
     const img = card.nativeElement.querySelector('.char-img');
 
     gsap.to(img, {
-      scale: 1.2,
+      scale: 1.3,
       ease: "none",
       scrollTrigger: {
         trigger: card.nativeElement,
@@ -63,7 +63,7 @@ export class AboutUsComponent implements AfterViewInit {
       }
     });
 
-    gsap.to(card.nativeElement.querySelector('.img-container'), {
+    gsap.to(card.nativeElement.querySelector('.char-img'), {
       y: -6,
       duration: 2.7,
       repeat: -1,
@@ -72,7 +72,7 @@ export class AboutUsComponent implements AfterViewInit {
       delay: Math.random()
     });
 
-    gsap.to(card.nativeElement.querySelector('.img-container'), {
+    gsap.to(card.nativeElement.querySelector('.char-img'), {
       x: 4,
       duration: 4.1,
       repeat: -1,
@@ -81,7 +81,7 @@ export class AboutUsComponent implements AfterViewInit {
       delay: Math.random()
     });
 
-    gsap.to(card.nativeElement.querySelector('.img-container'), {
+    gsap.to(card.nativeElement.querySelector('.char-img'), {
       rotation: 1.5,
       duration: 3.3,
       repeat: -1,
