@@ -1,0 +1,396 @@
+.potato-profile {
+
+    max-width: 1000px;
+
+    margin: 2rem auto;
+
+    padding: 2rem;
+
+    border-radius: 2rem;
+
+    background: #f7f4ec;
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.12);
+
+}
+
+/* ====================================================== */
+
+.profile-header {
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 2rem;
+
+    align-items: center;
+
+    margin-bottom: 2rem;
+
+}
+
+/* ====================================================== */
+
+.photo-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 1rem;
+
+    border-radius: 1.5rem;
+
+    background:
+        radial-gradient(circle,#ffffff,#efe8d5);
+
+}
+
+.photo-section img {
+
+    width: 100%;
+
+    max-width: 260px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 12px 12px rgba(0,0,0,.18));
+
+}
+
+/* ====================================================== */
+
+.basic-info {
+
+    background: white;
+
+    padding: 1.5rem;
+
+    border-radius: 1.5rem;
+
+}
+
+.basic-info h2 {
+
+    margin-bottom: 1rem;
+
+    font-weight: 700;
+
+    text-align: center;
+
+}
+
+/* ====================================================== */
+
+.basic-info table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0 .5rem;
+
+}
+
+.basic-info td {
+
+    padding: .75rem 1rem;
+
+}
+
+.basic-info td:first-child {
+
+    width: 35%;
+
+    font-weight: bold;
+
+    color: #567c57;
+
+}
+
+.basic-info td:last-child {
+
+    background: #f8f8f8;
+
+    border-radius: .75rem;
+
+}
+
+/* ====================================================== */
+
+section {
+
+    margin-top: 1.5rem;
+
+    padding: 1.25rem;
+
+    border-radius: 1.25rem;
+
+    background: white;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.05);
+
+}
+
+section h4 {
+
+    margin-bottom: 1rem;
+
+    color: #567c57;
+
+    font-weight: bold;
+
+}
+
+/* ====================================================== */
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: .5rem;
+
+}
+
+.tags .badge {
+
+    padding: .55rem .9rem;
+
+    border-radius: 999px;
+
+    font-size: .95rem;
+
+}
+
+/* ====================================================== */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .4rem;
+
+    margin-left: .4rem;
+
+}
+
+.badge img {
+
+    width: 18px;
+
+    height: 18px;
+
+}
+
+/* ====================================================== */
+
+blockquote {
+
+    margin: 0;
+
+    padding: 1rem 1.25rem;
+
+    border-right: 6px solid #567c57;
+
+    border-radius: 1rem;
+
+    background: #f9fbf6;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color: #444;
+
+}
+
+/* ====================================================== */
+
+@media (max-width: 768px) {
+
+    .profile-header {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .photo-section {
+
+        order: -1;
+
+    }
+
+}
+
+.element-img {
+    width: 20%; 
+    
+    position: absolute; 
+    left: 5%; 
+    top: 0%;
+}
+
+.signature-section {
+
+    margin-top: 3rem;
+
+    text-align: center;
+
+}
+
+.signature-box {
+
+    position: relative;
+
+    width: 420px;
+    height: 120px;
+
+    margin: 2rem auto;
+
+    cursor: pointer;
+
+}
+
+.signature-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    width: 280px;
+    height: 2px;
+
+    background: black;
+
+}
+
+/* ======================================= */
+
+.signature-wrapper {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -10%;
+
+    transform: translateX(-50%);
+
+    width: 240px;
+
+    clip-path: inset(0 100% 0 0);
+
+}
+
+/* actual signature */
+
+.signature {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+/* ======================================= */
+
+.stamp {
+
+    position: absolute;
+
+    width: 200px;
+
+    right: 25px;
+    top: 15px;
+
+    opacity: 0;
+
+    transform:
+        scale(2)
+        rotate(-20deg);
+
+}
+
+/* ======================================= */
+
+.signature-section.signed .signature-wrapper {
+
+    animation:
+        writeSignature 1.3s linear forwards;
+
+}
+
+.signature-section.signed .stamp {
+
+    animation:
+        stampAppear .45s ease-out forwards;
+
+    animation-delay: 1.35s;
+
+}
+
+/* ======================================= */
+
+@keyframes writeSignature {
+
+    from {
+
+        clip-path: inset(0 100% 0 0);
+
+    }
+
+    to {
+
+        clip-path: inset(0 0 0 0);
+
+    }
+
+}
+
+@keyframes stampAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(2)
+            rotate(-20deg);
+
+    }
+
+    65% {
+
+        opacity: 1;
+
+        transform:
+            scale(.85)
+            rotate(-15deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(-15deg);
+
+    }
+
+}

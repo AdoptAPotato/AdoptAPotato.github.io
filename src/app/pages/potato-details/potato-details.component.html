@@ -1,1 +1,175 @@
-<p>potato-details works!</p>
+<div class="potato-profile" *ngIf="potato as potato">
+
+  <div class="profile-header">
+
+    <div class="photo-section">
+
+      <img
+        [src]="potato.image"
+        [alt]="potato.name">
+
+    </div>
+
+    <div class="basic-info">
+
+      <h2>{{ potato.name }}</h2>
+
+      <table>
+
+        <tr>
+          <td>کد ملی</td>
+          <td>{{ potato.id }}</td>
+        </tr>
+
+        <tr>
+          <td>سایز</td>
+          <td>{{ size.width.toLocaleString('fa-IR') }} سانتی متر ({{ size.code }})</td>
+        </tr>
+
+        <tr>
+          <td>ماه تولد</td>
+
+          <td [style.background]="birthMonthElement.color" class="text-light" style="position: relative; overflow: hidden;">
+
+            {{ potato.birthMonth }}
+            &nbsp;
+            ✦
+            &nbsp;
+            عنصر: 
+            {{ birthMonthElement.name }}
+            <img [src]="'/elements/' + birthMonthElement.img" class="element-img">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>تیپ شخصیتی</td>
+
+          <td [style.background]="mbtiType.color" class="text-light">
+            {{ mbtiType.code }}
+            &nbsp;
+            ✦
+            &nbsp;
+            {{ mbtiType.name }}
+          </td>
+
+        </tr>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <section>
+
+    <h4>
+      نقاط قوت
+      <i class="bi bi-stars me-2"></i>
+    </h4>
+
+    <div class="tags">
+
+      <span
+        class="badge bg-success"
+        *ngFor="let strength of potato.strengths">
+
+        {{ strength }}
+
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <h4>
+      نقاط ضعف
+      <i class="bi bi-exclamation-diamond me-2"></i>
+    </h4>
+
+    <div class="tags">
+
+      <span
+        class="badge bg-danger"
+        *ngFor="let weakness of potato.weaknesses">
+
+        {{ weakness }}
+
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <h4>
+      خوراکی مورد علاقه
+      <i class="bi bi-cup-hot me-2"></i>
+    </h4>
+
+    <p>{{ potato.favoriteFood }}</p>
+
+  </section>
+
+
+  <section>
+
+    <h4>
+      سرگرمی مورد علاقه
+      <i class="bi bi-controller me-2"></i>
+    </h4>
+
+    <p>{{ potato.favoriteHobby }}</p>
+
+  </section>
+
+
+  <section>
+
+    <h4>
+      یه فکت جالب راجع به {{ potato.name }}
+      <i class="bi bi-lightbulb me-2"></i>
+    </h4>
+
+    <blockquote>
+
+      {{ potato.funFact }}
+
+    </blockquote>
+
+  </section>
+
+  <div
+    class="signature-section"
+    (click)="sign()"
+    [class.signed]="signed">
+
+    <h5>امضای سرپرست</h5>
+
+    <div class="signature-box">
+
+        <div class="signature-wrapper">
+
+          <img
+            src="/signature.png"
+            class="signature">
+
+        </div>
+
+        <img
+          src="/stamp.png"
+          class="stamp">
+
+    </div>
+
+  </div>
+
+</div>

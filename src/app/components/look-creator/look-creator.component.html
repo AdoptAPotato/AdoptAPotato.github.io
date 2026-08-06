@@ -24,9 +24,9 @@
             name="boxWidth">
 
             <option
-                *ngFor="let width of widths"
-                [ngValue]="width">
-                {{ width.toLocaleString('fa-IR') }} سانتی متر
+                *ngFor="let size of sizes"
+                [ngValue]="size.width">
+                {{ size.width.toLocaleString('fa-IR') }} سانتی متر
             </option>
         </select>
     </div>

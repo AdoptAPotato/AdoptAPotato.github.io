@@ -6,7 +6,7 @@ import { CreatorWizardComponent } from '../../components/creator-wizard/creator-
 import { ExtraItem } from '../../models/creator';
 import { CreatorStateService } from '../../services/creator-state.service';
 import { PricingService } from '../../services/pricing.service';
-import { WIDTHS } from '../../data/constants';
+import { SIZES } from '../../data/constants';
 
 @Component({
   selector: 'app-look-creator',
@@ -32,8 +32,8 @@ export class LookCreatorComponent {
     public pricingService: PricingService
   ) {}
 
-  get widths() {
-    return WIDTHS;
+  get sizes() {
+    return SIZES;
   }
 
   onDragOver(event: DragEvent) {

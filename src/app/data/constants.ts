@@ -1,5 +1,11 @@
 // Look
-export const WIDTHS = [4, 5, 6, 7, 8]
+export const SIZES = [
+  { width: 4, code: 'XS' }, 
+  { width: 5, code: 'S' },
+  { width: 6, code: 'M' },
+  { width: 7, code: 'L' },
+  { width: 8, code: 'XL' }
+]
 
 
 // Personality
@@ -74,7 +80,12 @@ export const POTATOES = [
       price: 350,
       motto: "زندگی آب روان است",
       birthMonth: 'اردیبهشت',
-      mbti: 'ENFJ'
+      mbti: 'ENFJ',
+      funFact: 'همه فکر می‌کنن که در حال یه مدیتیشن دائمیه، اما در حقیقت خسته‌تر از اونیه که بخواد تکون بخوره! جوونیش پانک بوده.',
+      favoriteHobby: 'مدیتیشن',
+      favoriteFood: 'بادوم',
+      strengths: ['خرد', 'صبر', 'مقاومت'],
+      weaknesses: ['همیشه خستست']
     },
     {
       id: 2,
