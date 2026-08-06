@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { PotatoCardComponent } from '../../components/potato-card/potato-card.component';
-import { MBTI_TYPES, MONTHS } from '../../data/constants';
+import { MBTI_TYPES, MONTHS, POTATOES } from '../../data/constants';
 import { Potato } from '../../models/potato';
 
 @Component({
@@ -18,6 +18,10 @@ export class AdoptionComponent {
   
   filterMbti: string = '';
   filterMonth: string = '';
+
+  get potatoes() {
+    return POTATOES
+  }
   
   get mbtiTypes() {
     return MBTI_TYPES;
@@ -44,78 +48,4 @@ export class AdoptionComponent {
     this.filterMonth = '';
     this.applyFilters();
   }
-
-  potatoes = [
-    {
-      id: 1,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی خردمند',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی آب روان است",
-      birthMonth: 'اردیبهشت',
-      mbti: 'ENFJ'
-    },
-    {
-      id: 2,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی نابخرد',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی لهو و لعب است",
-      birthMonth: 'فروردین',
-      mbti: 'ESFP'
-    },
-    {
-      id: 3,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی خفن',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی آب روان است",
-      birthMonth: 'تیر',
-      mbti: 'INTJ'
-    },
-    {
-      id: 4,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی ایرادی',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی لهو و لعب است",
-      birthMonth: 'خرداد',
-      mbti: 'ISTJ'
-    },
-    {
-      id: 5,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی خردمند',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی آب روان است",
-      birthMonth: 'اردیبهشت',
-      mbti: 'ENFJ'
-    },
-    {
-      id: 6,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی نابخرد',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی لهو و لعب است",
-      birthMonth: 'فروردین',
-      mbti: 'ESFP'
-    },
-    {
-      id: 7,
-      image: '/sample potatos/1.jpg',
-      name: 'سیب‌زمینی خردمند',
-      size: 'XS',
-      price: 350,
-      motto: "زندگی آب روان است",
-      birthMonth: 'اردیبهشت',
-      mbti: 'ENFJ'
-    }
-  ]
-
 }
