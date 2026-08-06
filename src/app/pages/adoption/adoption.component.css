@@ -1,0 +1,23 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  
+  gap: 2rem;
+}
+
+h3 {
+  position: relative; 
+  
+  display: inline-block;
+}
+
+.chuck {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  
+  width: 105%;
+
+  z-index: -1;
+}

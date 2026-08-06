@@ -1,3 +1,13 @@
 <div class="p-5">
-    <app-potato-card></app-potato-card>
+  <h3>
+    کلی سیب‌زمینی با شخصیت‌های متفاوت... 
+  </h3>
+  <h3>
+    <img src="/textures/chuck line.png" class="chuck">
+    کدومشون رو خونه می‌بری؟
+  </h3>
+
+  <div class="cards-grid p-5">
+    <app-potato-card *ngFor="let potato of potatoes" [potato]="potato"></app-potato-card>
+  </div>
 </div>
