@@ -25,11 +25,11 @@ export const MBTI_TYPES = [
     { code: 'ESFP', name: 'سرگرم‌کننده', color: '#e6d433' }
 ];
 
-export const ELEMENTS: { [key: string]: { name: string; img: string; color: string } } = {
-    'fire': { name: 'آتش', img: 'fire.png', color: '#f7621e' },
-    'earth': { name: 'خاک', img: 'earth.png', color: '#3c805b' },
-    'air': { name: 'هوا', img: 'air.png', color: '#7472c5' },
-    'water': { name: 'آب', img: 'water.png', color: '#208aba' }
+export const ELEMENTS: { [key: string]: { name: string; img: string; texture_img:string; color: string } } = {
+    'fire': { name: 'آتش', img: 'fire.png', texture_img: 'fire.jpg', color: '#f7621e' },
+    'earth': { name: 'خاک', img: 'earth.png', texture_img: 'earth.jpg', color: '#3c805b' },
+    'air': { name: 'هوا', img: 'air.png', texture_img: 'air.jpg', color: '#7472c5' },
+    'water': { name: 'آب', img: 'water.png', texture_img: 'water.jpg', color: '#208aba' }
 };
 
 export const MONTHS = [

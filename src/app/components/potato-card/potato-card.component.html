@@ -1,44 +1,42 @@
-<div class="potato-card">
+<div class="potato-card p-3">
 
   <div 
     class="card-inner"
-    [style.backgroundImage]="'url(' + '/textures/' + potato.birthMonth.element.img + '.jpg)'">
+    [style.backgroundImage]="'url(' + '/textures/' + birthMonthElement.texture_img + ')'">
 
     <div class="card-top">
 
         <div
-            class="element-badge"
-            [style.background]="potato.birthMonth.element.color + '88'">
+            class="element-badge mt-1 me-1"
+            [style.background]="birthMonthElement.color + '33'">
 
             <img
-            [src]="'/elements/' + potato.birthMonth.element.img + '.png'"
-            [alt]="potato.birthMonth.element.name">
+            [src]="'/elements/' + birthMonthElement.img"
+            [alt]="birthMonthElement.name"
+            class="w-75">
 
         </div>
 
-        <h5><b>{{ potato.name }}</b></h5>
+        <h5 class="m-0 me-2"><b>{{ potato.name }}</b></h5>
 
-      <span
-        class="mbti-badge"
-        [style.background]="potato.mbti.color">
+        <span
+            class="mbti-badge px-3 pt-1"
+            [style.background]="mbtiType!.color">
 
-        {{ potato.mbti.code }}
+            {{ mbtiType!.code }}
 
-      </span>
+        </span>
 
     </div>
 
     <div class="p-2">
-        <div class="image-wrapper">
-
         <img
-            class="potato-image"
+            class="potato-image w-100 mb-3"
             [src]="potato.image"
             [alt]="potato.name">
 
-        </div>
 
-        <table class="info-table">
+        <table class="info-table w-100">
 
             <tr>
                 <td>قیمت</td>
