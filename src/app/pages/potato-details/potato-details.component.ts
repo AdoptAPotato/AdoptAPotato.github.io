@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ViewChild, TemplateRef } from '@angular/core';
 
 import { ELEMENTS, MBTI_TYPES, MONTHS, POTATOES, SIZES } from '../../data/constants';
 import { Potato } from '../../models/potato';
@@ -21,7 +23,13 @@ export class PotatoDetailsComponent {
 
   signed = false;
 
-  constructor(private route: ActivatedRoute) {}
+  @ViewChild('adoptionModal')
+  adoptionModal!: TemplateRef<any>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -38,15 +46,19 @@ export class PotatoDetailsComponent {
   sign() {
 
     if (this.signed)
-        return;
+      return;
 
     this.signed = true;
 
     setTimeout(() => {
-
-        // open your modal here
-
-    }, 1800);
+      this.modalService.open(
+        this.adoptionModal,
+        {
+          centered: true,
+          size: 'lg'
+        }
+      );
+    }, 2000);
 
   }
 

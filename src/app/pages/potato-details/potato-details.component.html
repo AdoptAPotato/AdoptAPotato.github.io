@@ -173,3 +173,36 @@
   </div>
 
 </div>
+
+<ng-template #adoptionModal let-modal *ngIf="potato as potato">
+
+  <div class="modal-header d-flex justify-content-between align-items-start">
+
+    <h4 class="modal-title ps-3">
+      به نظر می‌رسه که سرنوشت این سیب‌زمینی با تو گره خورده...
+    </h4>
+
+    <button
+      type="button"
+      class="btn-close m-0"
+      aria-label="Close"
+      (click)="modal.dismiss()">
+    </button>
+
+  </div>
+
+
+  <div class="modal-body text-center p-5">
+
+    <p class="mb-5">
+       برای تکمیل سرپرستی این سیب‌زمینی، در تلگرام یا واتساپ با شماره ۰۹۹۱۲۱۳۱۴۱۵ تماس بگیرید و کد زیر رو به ما اعلام کنید!
+    </p>
+    <p>
+      <b>
+        کد ملی این سیب‌زمینی:  {{ potato.id }}
+      </b>
+    </p>
+
+  </div>
+
+</ng-template>
