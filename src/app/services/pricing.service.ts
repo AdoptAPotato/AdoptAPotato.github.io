@@ -1,25 +1,18 @@
 import { Injectable } from '@angular/core';
 
 import { CreatorStateService } from './creator-state.service';
+import { 
+  BASIC_COST, 
+  ONE_CUSTOM_COST, 
+  READY_ITEM_COST, 
+  THREE_PLUS_CUSTOM_COST, 
+  TWO_CUSTOM_COST 
+} from '../data/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PricingService {
-
-  basicCost: Record<number, number> = {
-    4: 300,
-    5: 325,
-    6: 350,
-    7: 375,
-    8: 400
-  };
-
-  readyItemCost = 100;
-
-  oneCustomCost = 150;
-  twoCustomCost = 125;
-  threePlusCustomCost = 100;
 
   constructor(private state: CreatorStateService) {}
 
@@ -29,7 +22,7 @@ export class PricingService {
 
     breakdown.push({
       title: 'هزینه پایه (بر حسب سایز جعبه)',
-      cost: this.basicCost[this.state.boxWidth]
+      cost: BASIC_COST[this.state.boxWidth]
     });
 
     const readyCount =
@@ -39,7 +32,7 @@ export class PricingService {
     if (readyCount) {
       breakdown.push({
         title: `آیتم آماده × ${readyCount.toLocaleString('fa-IR')}`,
-        cost: readyCount * this.readyItemCost
+        cost: readyCount * READY_ITEM_COST
       });
     }
 
@@ -49,17 +42,17 @@ export class PricingService {
     if (customCount === 1) {
       breakdown.push({
         title: 'آیتم سفارشی × ۱',
-        cost: this.oneCustomCost
+        cost: ONE_CUSTOM_COST
       });
     } else if (customCount === 2) {
       breakdown.push({
         title: 'آیتم سفارشی × ۲',
-        cost: this.twoCustomCost * 2
+        cost: TWO_CUSTOM_COST * 2
       });
     } else if (customCount >= 3) {
       breakdown.push({
         title: `آیتم سفارشی × ${customCount.toLocaleString('fa-IR')}`,
-        cost: this.threePlusCustomCost * customCount
+        cost: THREE_PLUS_CUSTOM_COST * customCount
       });
     }
 

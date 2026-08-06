@@ -17,7 +17,7 @@
         عنصر:
         <span *ngIf="state.birthMonth" [style.color]="elements[state.birthMonth.element].color">
           {{ elements[state.birthMonth.element].name }}
-          <img src="/elements/{{ state.birthMonth.element }}.png" class="element-img">
+          <img src="/elements/{{ elements[state.birthMonth.element].img }}" class="element-img">
         </span>
         <span *ngIf="!state.birthMonth">-</span>
       </label>

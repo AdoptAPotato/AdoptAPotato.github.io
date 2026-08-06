@@ -6,6 +6,7 @@ import { CreatorWizardComponent } from '../../components/creator-wizard/creator-
 import { ExtraItem } from '../../models/creator';
 import { CreatorStateService } from '../../services/creator-state.service';
 import { PricingService } from '../../services/pricing.service';
+import { WIDTHS } from '../../data/constants';
 
 @Component({
   selector: 'app-look-creator',
@@ -19,7 +20,7 @@ import { PricingService } from '../../services/pricing.service';
 })
 export class LookCreatorComponent {
 
-  widths = [4, 5, 6, 7, 8]
+  widths = WIDTHS
 
   isDragging = false;
   
