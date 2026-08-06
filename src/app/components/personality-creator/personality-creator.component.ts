@@ -34,20 +34,27 @@ export class PersonalityCreatorComponent {
     { code: 'ESFP', name: 'سرگرم‌کننده', color: '#e6d433' }
   ];
 
-  months: string[] = [
-    "فروردین",
-    "اردیبهشت",
-    "خرداد",
-    "تیر",
-    "مرداد",
-    "شهریور",
-    "مهر",
-    "آبان",
-    "آذر",
-    "دی",
-    "بهمن",
-    "اسفند"
-  ]
+  elements: { [key: string]: { name: string; img: string; color: string } } = {
+    'fire': { name: 'آتش', img: 'fire.png', color: '#f7621e' },
+    'earth': { name: 'خاک', img: 'earth.png', color: '#3c805b' },
+    'air': { name: 'هوا', img: 'air.png', color: '#7472c5' },
+    'water': { name: 'آب', img: 'water.png', color: '#208aba' }
+  }
+
+  months = [
+    { name: 'فروردین', element: 'fire' },
+    { name: 'اردیبهشت', element: 'earth' },
+    { name: 'خرداد', element: 'air' },
+    { name: 'تیر', element: 'water' },
+    { name: 'مرداد', element: 'fire' },
+    { name: 'شهریور', element: 'earth' },
+    { name: 'مهر', element: 'air' },
+    { name: 'آبان', element: 'water' },
+    { name: 'آذر', element: 'fire' },
+    { name: 'دی', element: 'earth' },
+    { name: 'بهمن', element: 'air' },
+    { name: 'اسفند', element: 'water' }
+  ];
 
   constructor(public state: CreatorStateService) {}
 

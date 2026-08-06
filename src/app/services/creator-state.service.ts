@@ -21,5 +21,7 @@ export class CreatorStateService {
   boxWidth: number = 4;
 
   orderID: number = 1234;
+
+  birthMonth: { name: string; element: string } | null = null;
   
 }

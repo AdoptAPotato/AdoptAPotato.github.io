@@ -11,19 +11,27 @@
     <div class="col-md-6">
       <label class="form-label">
         ماه تولد
+        &nbsp;
+        ✦
+        &nbsp;
+        عنصر:
+        <span *ngIf="state.birthMonth" [style.color]="elements[state.birthMonth.element].color">
+          {{ elements[state.birthMonth.element].name }}
+          <img src="/elements/{{ state.birthMonth.element }}.png" class="element-img">
+        </span>
+        <span *ngIf="!state.birthMonth">-</span>
       </label>
 
-      <select class="form-select">
+      <select class="form-select" [(ngModel)]="state.birthMonth">
         <option disabled selected>
           انتخاب ماه
         </option>
         
-        <option *ngFor="let month of months">
-          {{ month }}
+        <option *ngFor="let month of months" [ngValue]="month">
+          {{ month.name }}
         </option>
       </select>
     </div>
-
 
     <!-- MBTI -->
     <div class="col-md-6">
