@@ -7,7 +7,43 @@
     کدومشون رو خونه می‌بری؟
   </h3>
 
-  <div class="cards-grid p-5">
-    <app-potato-card *ngFor="let potato of potatoes" [potato]="potato"></app-potato-card>
+  <div class="row g-3 my-5">
+    <div class="col-md-4">
+      <label class="form-label">فیلتر بر اساس تیپ شخصیتی</label>
+      <select class="form-select" [(ngModel)]="filterMbti" (change)="applyFilters()">
+        <option value="">همه</option>
+        <option *ngFor="let type of mbtiTypes" [value]="type.code" [style.color]="type.color">
+          {{ type.code }} - {{ type.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label class="form-label">فیلتر بر اساس ماه تولد</label>
+      <select class="form-select" [(ngModel)]="filterMonth" (change)="applyFilters()">
+        <option value="">همه</option>
+        <option *ngFor="let month of months" [value]="month.name">
+          {{ month.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-4 d-flex align-items-end">
+      <button class="btn btn-secondary" (click)="resetFilters()">
+        حذف فیلترها
+      </button>
+    </div>
   </div>
+
+  <div class="cards-grid">
+    <app-potato-card 
+      *ngFor="let potato of filteredPotatoes" 
+      [potato]="potato">
+    </app-potato-card>
+  </div>
+
+  <p *ngIf="filteredPotatoes.length === 0" class="text-center text-muted">
+    هیچ سیب‌زمینی‌ای با این فیلترها پیدا نشد!
+  </p>
+
 </div>
