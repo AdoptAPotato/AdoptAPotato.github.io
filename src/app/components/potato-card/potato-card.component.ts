@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { ELEMENTS, MBTI_TYPES, MONTHS } from '../../data/constants';
 import { Potato } from '../../models/potato';
 
 @Component({
   selector: 'app-potato-card',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './potato-card.component.html',
   styleUrl: './potato-card.component.css'
 })

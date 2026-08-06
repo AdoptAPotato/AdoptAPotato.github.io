@@ -1,4 +1,5 @@
 export interface Potato {
+    id: number;
     name: string;
     image: string;
     size: string;

@@ -47,6 +47,7 @@ export class AdoptionComponent {
 
   potatoes = [
     {
+      id: 1,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی خردمند',
       size: 'XS',
@@ -56,6 +57,7 @@ export class AdoptionComponent {
       mbti: 'ENFJ'
     },
     {
+      id: 2,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی نابخرد',
       size: 'XS',
@@ -65,6 +67,7 @@ export class AdoptionComponent {
       mbti: 'ESFP'
     },
     {
+      id: 3,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی خفن',
       size: 'XS',
@@ -74,6 +77,7 @@ export class AdoptionComponent {
       mbti: 'INTJ'
     },
     {
+      id: 4,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی ایرادی',
       size: 'XS',
@@ -83,6 +87,7 @@ export class AdoptionComponent {
       mbti: 'ISTJ'
     },
     {
+      id: 5,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی خردمند',
       size: 'XS',
@@ -92,6 +97,7 @@ export class AdoptionComponent {
       mbti: 'ENFJ'
     },
     {
+      id: 6,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی نابخرد',
       size: 'XS',
@@ -101,6 +107,7 @@ export class AdoptionComponent {
       mbti: 'ESFP'
     },
     {
+      id: 7,
       image: '/sample potatos/1.jpg',
       name: 'سیب‌زمینی خردمند',
       size: 'XS',
