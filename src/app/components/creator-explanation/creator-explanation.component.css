@@ -5,23 +5,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 2rem;
 }
 
 .real-img {
     flex: 1;
-    max-width: 50%;
+    max-width: 45%;
     height: auto;
 }
 
 .animation-img {
     flex: 1;
-    max-width: 55%;
+    max-width: 50%;
     height: auto;
 }
 
 .arrow {
-    max-width: 30%;
+    max-width: 25%;
     height: auto;
     flex-shrink: 0;
+}
+
+
+@media (max-width: 768px) {
+
+    .sample-container {
+        gap: 0.25rem;
+    }
+
+    .arrow {
+        max-width: 27.5%;
+    }
+
+    .real-img {
+        max-width: 65%;
+    }
+
+    .animation-img {
+        max-width: 75%;
+    }
+
 }
