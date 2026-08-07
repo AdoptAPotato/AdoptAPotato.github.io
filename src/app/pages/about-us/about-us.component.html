@@ -1,18 +1,20 @@
-<div class="container py-5">
+<div class="container p-5 pb-0 pb-lg-3">
     <h1 class="display-3 fw-bold mb-5">
         <span class="h1" #title></span>
         <span class="h1" #cursor>|</span>
     </h1>
 
-    <div *ngFor="let person of people" #personCard class="row align-items-center mb-5">
-        <div class="col-md-2 text-center img-container">
+    <div *ngFor="let person of people; let last = last" #personCard class="row align-items-center">
+        <div class="col-md-2 text-center img-container mb-3 mb-lg-5">
             <img src="{{ person.bg_img }}" class="bg-svg">
             <img src="{{ person.img }}" alt="{{ person.name }}" class="img-fluid char-img">
         </div>
 
-        <div class="col-md-10">
+        <div class="col-md-10 mb-5">
             <h4>{{ person.name }}</h4>
             <p>{{ person.description }}</p>
         </div>
+
+        <img *ngIf="!last" src="/textures/hr.png" class="hr mb-5">
     </div>
 </div>

@@ -59,3 +59,20 @@ body {
 .color-popover .popover-body {
   padding: 0.5em;
 }
+
+.hr {
+  display: none;
+
+  height: 0.4rem;
+  width: 95%;
+  
+  opacity: 50%;
+}
+
+@media (max-width: 768px) {
+
+  .hr {
+    display: block;
+  }
+
+}
