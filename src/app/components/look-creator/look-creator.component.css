@@ -159,3 +159,38 @@ form {
 
   font-size: large;
 }
+
+.wizard-mobile {
+  display: none;
+}
+
+.wizard-desktop {
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+
+  .outer-flex {
+    flex-direction: column;
+
+    justify-content: center;
+  }
+
+  app-creator-wizard {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .wizard-mobile {
+    display: block;
+  }
+
+  .wizard-desktop {
+    display: none;
+  }
+
+}
