@@ -5,3 +5,16 @@
     opacity: 75%;
 
 }
+
+
+@media (max-width: 768px) {
+
+    .logo_img {
+
+        height: 3rem;
+
+        opacity: 75%;
+
+    }
+
+}

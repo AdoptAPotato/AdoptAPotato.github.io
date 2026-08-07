@@ -1,6 +1,6 @@
 .creator-btn {
-    width: 3rem;
-    height: 3rem;
+    width: 14%;
+    aspect-ratio: 1 / 1;
 }
 
 .creator-btn-img {
@@ -25,9 +25,42 @@
 }
 
 canvas {
-    width: 25rem;
+
+    width: 100%;
+    max-width: 25rem;
+
+    height: auto;
+
 }
 
 .items {
-    width: 21rem;
+
+    width: 100%;
+    max-width: 21rem;
+
+}
+
+@media (max-width: 768px) {
+
+    /* canvas {
+        width: 20rem;
+    }
+
+    .items {
+        width: 18rem;
+    }
+
+    .creator-btn {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .creator-btn-img {
+        max-width: 90%;
+        max-height: 90%;
+
+        width: auto;
+        height: auto;
+    } */
+
 }

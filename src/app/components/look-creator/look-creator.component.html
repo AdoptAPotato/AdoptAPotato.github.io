@@ -35,7 +35,7 @@
             <app-creator-wizard></app-creator-wizard>
         </div>
 
-        <div class="form-group mb-4">
+        <div class="form-group mb-5 mb-lg-4">
             <label for="fileInput" class="form-label">هر عکس رفرنسی که داری که می‌تونه به دقیق‌تر ساختن چیزی که توی ذهنته به ما کمک کنه این‌جا آپلود کن</label>
 
             <div class="upload-box"
@@ -82,7 +82,7 @@
             (change)="onFileSelected($event)">
         </div>
 
-        <div class="needed-items mb-4">
+        <div class="needed-items mb-5 mb-lg-4">
 
             <label class="form-label">
             اگر می‌خوای تعداد بیش‌تری از آیتم‌های آماده رو همزمان داشته باشی یا آیتمی مد نظر داری که پیداش نمی‌کنی (آیتم سفارشی)، می‌تونی از این‌جا اضافش کنی
@@ -172,15 +172,17 @@
         <app-creator-wizard></app-creator-wizard>
     </div>
 
-    <table class="table pricing-table text-warning mt-3">
-    <tr *ngFor="let row of pricingService.getBreakdown().breakdown">
-        <td class="ps-5">{{ row.title }}</td>
-        <td>{{ row.cost.toLocaleString('fa-IR') }}</td>
-    </tr>
+    <img src="/textures/hr.png" class="hr my-4">
 
-    <tr class="fw-bold">
-        <td class="ps-5">جمع</td>
-        <td>{{ pricingService.getBreakdown().total.toLocaleString('fa-IR') }} تومان</td>
-    </tr>
+    <table class="table pricing-table text-warning mt-3">
+        <tr *ngFor="let row of pricingService.getBreakdown().breakdown">
+            <td class="ps-3 ps-lg-5">{{ row.title }}</td>
+            <td class="table-price">{{ row.cost.toLocaleString('fa-IR') }}</td>
+        </tr>
+
+        <tr class="fw-bold">
+            <td class="ps-3 ps-lg-5">جمع</td>
+            <td class="table-price">{{ pricingService.getBreakdown().total.toLocaleString('fa-IR') }} تومان</td>
+        </tr>
     </table>
 </div>

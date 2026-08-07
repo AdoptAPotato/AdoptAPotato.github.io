@@ -193,4 +193,8 @@ form {
     display: none;
   }
 
+  .table-price {
+    text-align: center;
+  }
+
 }
