@@ -39,7 +39,7 @@
     </button>
 
     <button
-      *ngIf="currentStep > 1 && maxSteps > currentStep"
+      *ngIf="currentStep > 1 && maxSteps >= currentStep"
       class="btn btn-primary btn-lg"
       (click)="previous()">
       قبلی

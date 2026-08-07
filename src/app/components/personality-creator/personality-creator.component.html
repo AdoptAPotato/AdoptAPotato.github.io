@@ -67,13 +67,13 @@
 
       <div class="tag-input mt-2">
         <div
-          class="badge bg-primary"
+          class="badge bg-success"
           *ngFor="let strength of state.strengths">
 
           {{ strength }}
 
           <i
-            class="bi bi-x me-1"
+            class="bi bi-x-lg me-2"
             (click)="removeStrength(strength)">
           </i>
 
@@ -95,13 +95,13 @@
 
       <div class="tag-input mt-2">
         <div
-          class="badge bg-secondary"
+          class="badge bg-danger"
           *ngFor="let weakness of state.weaknesses">
 
           {{ weakness }}
 
           <i
-            class="bi bi-x me-1"
+            class="bi bi-x-lg me-1"
             (click)="removeWeakness(weakness)">
           </i>
 
