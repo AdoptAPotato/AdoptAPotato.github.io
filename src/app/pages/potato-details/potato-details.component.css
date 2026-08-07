@@ -77,6 +77,16 @@
 
 }
 
+.bd-td {
+    position: relative;
+    overflow: hidden;
+}
+
+.bd-text {
+    position: relative;
+    z-index: 2
+}
+
 .basic-info td:first-child {
 
     width: 35%;
@@ -174,6 +184,8 @@ blockquote {
     position: absolute; 
     left: 5%; 
     top: 0%;
+
+    z-index: 0;
 }
 
 .signature-section {
@@ -341,9 +353,35 @@ blockquote {
 
     }
 
+    .potato-profile {
+
+        width: 90%;
+
+    }
+
     .photo-section {
 
         order: -1;
+
+    }
+
+    .element-img {
+
+        height: 100%;
+        width: auto;
+
+        left: -5%; 
+        top: 0%;
+
+    }
+
+    .bd-text {
+        width: 70%;
+    }
+
+    .stamp {
+
+        right: 0rem;
 
     }
 

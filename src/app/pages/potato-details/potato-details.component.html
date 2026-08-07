@@ -1,4 +1,4 @@
-<div class="potato-profile p-5" *ngIf="potato as potato">
+<div class="potato-profile p-3 p-lg-5" *ngIf="potato as potato">
 
   <div class="profile-header mb-3">
 
@@ -10,7 +10,7 @@
 
     </div>
 
-    <div class="basic-info p-4">
+    <div class="basic-info p-2 p-lg-4">
 
       <h2 class="mb-3">{{ potato.name }}</h2>
 
@@ -29,14 +29,17 @@
         <tr>
           <td>ماه تولد</td>
 
-          <td [style.background]="birthMonthElement.color" class="text-light" style="position: relative; overflow: hidden;">
+          <td [style.background]="birthMonthElement.color" class="text-light bd-td">
 
-            {{ potato.birthMonth }}
-            &nbsp;
-            ✦
-            &nbsp;
-            عنصر: 
-            {{ birthMonthElement.name }}
+            <div class="bd-text">
+              {{ potato.birthMonth }}
+              &nbsp;
+              ✦
+              &nbsp;
+              عنصر: 
+              {{ birthMonthElement.name }}
+            </div>
+            
             <img [src]="'/elements/' + birthMonthElement.img" class="element-img">
 
           </td>
