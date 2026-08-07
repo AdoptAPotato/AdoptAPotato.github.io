@@ -1,10 +1,8 @@
 .potato-profile {
 
-    max-width: 1000px;
+    width: 80%;
 
     margin: 2rem auto;
-
-    padding: 2rem;
 
     border-radius: 2rem;
 
@@ -15,33 +13,17 @@
 
 }
 
-/* ====================================================== */
-
 .profile-header {
 
     display: grid;
-
-    grid-template-columns: 320px 1fr;
-
+    grid-template-columns: 20rem 1fr;
     gap: 2rem;
 
     align-items: center;
 
-    margin-bottom: 2rem;
-
 }
 
-/* ====================================================== */
-
 .photo-section {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 1rem;
 
     border-radius: 1.5rem;
 
@@ -54,7 +36,7 @@
 
     width: 100%;
 
-    max-width: 260px;
+    border-radius: 1rem;
 
     object-fit: contain;
 
@@ -63,13 +45,9 @@
 
 }
 
-/* ====================================================== */
-
 .basic-info {
 
     background: white;
-
-    padding: 1.5rem;
 
     border-radius: 1.5rem;
 
@@ -77,15 +55,11 @@
 
 .basic-info h2 {
 
-    margin-bottom: 1rem;
-
-    font-weight: 700;
-
     text-align: center;
 
-}
+    font-weight: bold;
 
-/* ====================================================== */
+}
 
 .basic-info table {
 
@@ -121,8 +95,6 @@
 
 }
 
-/* ====================================================== */
-
 section {
 
     margin-top: 1.5rem;
@@ -148,8 +120,6 @@ section h4 {
 
 }
 
-/* ====================================================== */
-
 .tags {
 
     display: flex;
@@ -170,8 +140,6 @@ section h4 {
 
 }
 
-/* ====================================================== */
-
 .badge {
 
     display: inline-flex;
@@ -184,23 +152,9 @@ section h4 {
 
 }
 
-.badge img {
-
-    width: 18px;
-
-    height: 18px;
-
-}
-
-/* ====================================================== */
-
 blockquote {
 
-    margin: 0;
-
-    padding: 1rem 1.25rem;
-
-    border-right: 6px solid #567c57;
+    border-right: 0.5rem solid #567c57;
 
     border-radius: 1rem;
 
@@ -214,24 +168,6 @@ blockquote {
 
 }
 
-/* ====================================================== */
-
-@media (max-width: 768px) {
-
-    .profile-header {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .photo-section {
-
-        order: -1;
-
-    }
-
-}
-
 .element-img {
     width: 20%; 
     
@@ -242,8 +178,6 @@ blockquote {
 
 .signature-section {
 
-    margin-top: 3rem;
-
     text-align: center;
 
 }
@@ -252,10 +186,10 @@ blockquote {
 
     position: relative;
 
-    width: 420px;
-    height: 120px;
+    width: 17rem;
+    height: 9rem;
 
-    margin: 2rem auto;
+    margin: 0rem auto;
 
     cursor: pointer;
 
@@ -268,18 +202,16 @@ blockquote {
     position: absolute;
 
     left: 50%;
-    bottom: 30px;
+    bottom: 2rem;
 
     transform: translateX(-50%);
 
-    width: 280px;
+    width: 17rem;
     height: 2px;
 
     background: black;
 
 }
-
-/* ======================================= */
 
 .signature-wrapper {
 
@@ -290,32 +222,20 @@ blockquote {
 
     transform: translateX(-50%);
 
-    width: 240px;
+    width: 15rem;
 
     clip-path: inset(0 100% 0 0);
 
 }
 
-/* actual signature */
-
-.signature {
-
-    width: 100%;
-
-    display: block;
-
-}
-
-/* ======================================= */
-
 .stamp {
 
     position: absolute;
 
-    width: 200px;
+    width: 12rem;
 
-    right: 25px;
-    top: 15px;
+    right: -2rem;
+    top: 2rem;
 
     opacity: 0;
 
@@ -324,8 +244,6 @@ blockquote {
         rotate(-20deg);
 
 }
-
-/* ======================================= */
 
 .signature-section.signed .signature-wrapper {
 
@@ -342,8 +260,6 @@ blockquote {
     animation-delay: 1.35s;
 
 }
-
-/* ======================================= */
 
 @keyframes writeSignature {
 
@@ -412,5 +328,23 @@ blockquote {
 
     border-radius:
         1.5rem 1.5rem 0 0;
+
+}
+
+/* ======================================= */
+
+@media (max-width: 768px) {
+
+    .profile-header {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .photo-section {
+
+        order: -1;
+
+    }
 
 }

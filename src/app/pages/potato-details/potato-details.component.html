@@ -1,8 +1,8 @@
-<div class="potato-profile" *ngIf="potato as potato">
+<div class="potato-profile p-5" *ngIf="potato as potato">
 
-  <div class="profile-header">
+  <div class="profile-header mb-3">
 
-    <div class="photo-section">
+    <div class="photo-section d-flex justify-content-center align-items-center p-3">
 
       <img
         [src]="potato.image"
@@ -10,9 +10,9 @@
 
     </div>
 
-    <div class="basic-info">
+    <div class="basic-info p-4">
 
-      <h2>{{ potato.name }}</h2>
+      <h2 class="mb-3">{{ potato.name }}</h2>
 
       <table>
 
@@ -139,7 +139,7 @@
       <i class="bi bi-lightbulb me-2"></i>
     </h4>
 
-    <blockquote>
+    <blockquote class="m-0 p-3">
 
       {{ potato.funFact }}
 
@@ -148,19 +148,19 @@
   </section>
 
   <div
-    class="signature-section"
+    class="signature-section mt-5"
     (click)="sign()"
     [class.signed]="signed">
 
     <h5>امضای سرپرست</h5>
 
-    <div class="signature-box">
+    <div class="signature-box mb-3">
 
         <div class="signature-wrapper">
 
           <img
             src="/signature.png"
-            class="signature">
+            class="w-100 d-block">
 
         </div>
 
@@ -173,6 +173,7 @@
   </div>
 
 </div>
+
 
 <ng-template #adoptionModal let-modal *ngIf="potato as potato">
 
