@@ -160,15 +160,6 @@ form {
   font-size: large;
 }
 
-.wizard-mobile {
-  display: none;
-}
-
-.wizard-desktop {
-  display: block;
-}
-
-
 @media (max-width: 768px) {
 
   .outer-flex {
@@ -185,16 +176,8 @@ form {
     width: 100%;
   }
 
-  .wizard-mobile {
-    display: block;
-  }
-
-  .wizard-desktop {
-    display: none;
-  }
-
   .table-price {
-    text-align: center;
+    text-align: end;
   }
 
 }

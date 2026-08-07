@@ -69,10 +69,26 @@ body {
   opacity: 50%;
 }
 
+.sm-view {
+  display: none;
+}
+
+.lg-view {
+  display: inline-block;
+}
+
 @media (max-width: 768px) {
 
   .hr {
     display: block;
+  }
+
+  .sm-view {
+    display: inline-block;
+  }
+
+  .lg-view {
+    display: none;
   }
 
 }

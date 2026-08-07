@@ -260,7 +260,7 @@ blockquote {
 .signature-section.signed .signature-wrapper {
 
     animation:
-        writeSignature 1.3s linear forwards;
+        writeSignature 1s linear forwards;
 
 }
 
