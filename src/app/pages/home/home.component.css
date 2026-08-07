@@ -69,10 +69,22 @@
     z-index: 0;
 }
 
+
 @media (max-width: 768px) {
 
     .creator-section {
         direction: ltr;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .lead-lg {
+
+        font-size: 1.25rem;
+        font-weight: 300;
+
     }
 
 }
