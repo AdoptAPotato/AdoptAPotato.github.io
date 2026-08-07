@@ -68,3 +68,24 @@
     opacity: .5;
     z-index: 0;
 }
+
+.hr {
+    display: none;
+
+    height: 0.4rem;
+    width: 95%;
+    
+    opacity: 50%;
+}
+
+@media (max-width: 768px) {
+
+    .creator-section {
+        direction: ltr;
+    }
+
+    .hr {
+        display: block;
+    }
+
+}
