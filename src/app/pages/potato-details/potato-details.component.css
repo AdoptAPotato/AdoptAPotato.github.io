@@ -4,12 +4,13 @@
 
     margin: 2rem auto;
 
-    border-radius: 2rem;
+    background-image: url('/textures/paper.png');
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: 60%;
+    background-color: transparent;
 
-    background: #f7f4ec;
-
-    box-shadow:
-        0 12px 28px rgba(0,0,0,.12);
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,.12));
 
 }
 
@@ -25,13 +26,8 @@
 
 .photo-section {
 
-    border-radius: 1.5rem;
-
     position: relative;
     display: inline-block;
-
-    background:
-        radial-gradient(circle,#ffffff,#efe8d5);
 
 }
 
@@ -62,8 +58,6 @@
 }
 
 .basic-info {
-
-    background: white;
 
     border-radius: 1.5rem;
 
@@ -115,8 +109,6 @@
 
 .basic-info td:last-child {
 
-    background: #f8f8f8;
-
     border-radius: .75rem;
 
 }
@@ -126,13 +118,6 @@ section {
     margin-top: 1.5rem;
 
     padding: 1.25rem;
-
-    border-radius: 1.25rem;
-
-    background: white;
-
-    box-shadow:
-        0 3px 10px rgba(0,0,0,.05);
 
 }
 
@@ -180,11 +165,10 @@ section h4 {
 
 blockquote {
 
-    border-right: 0.5rem solid #567c57;
-
+    border: 0.25rem dashed #567c57;
     border-radius: 1rem;
 
-    background: #f9fbf6;
+    width: fit-content;
 
     font-style: italic;
 
@@ -195,6 +179,7 @@ blockquote {
 }
 
 .element-img {
+
     width: 20%; 
     
     position: absolute; 
@@ -202,6 +187,7 @@ blockquote {
     top: 0%;
 
     z-index: 0;
+
 }
 
 .signature-section {

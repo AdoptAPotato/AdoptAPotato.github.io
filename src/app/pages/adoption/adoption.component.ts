@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import { Potato } from '../../models/potato';
   templateUrl: './adoption.component.html',
   styleUrl: './adoption.component.css'
 })
-export class AdoptionComponent {
+export class AdoptionComponent implements OnInit, AfterViewInit {
 
   filteredPotatoes: Potato[] = [];
   
@@ -33,6 +33,13 @@ export class AdoptionComponent {
 
   ngOnInit() {
     this.filteredPotatoes = [...this.potatoes];
+  }
+
+  ngAfterViewInit() {
+    document.querySelectorAll('app-potato-card').forEach(el => {
+      const rotation = (Math.random() - 0.5) * 6;
+      (el as HTMLElement).style.transform = `rotate(${rotation}deg)`;
+    });
   }
 
   applyFilters() {

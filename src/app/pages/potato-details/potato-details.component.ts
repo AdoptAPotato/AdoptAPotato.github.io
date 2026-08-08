@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +13,7 @@ import { Potato } from '../../models/potato';
   templateUrl: './potato-details.component.html',
   styleUrl: './potato-details.component.css'
 })
-export class PotatoDetailsComponent {
+export class PotatoDetailsComponent implements OnInit {
 
   potato?: Potato;
 

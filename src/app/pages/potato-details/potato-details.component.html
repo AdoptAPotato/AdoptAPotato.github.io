@@ -77,89 +77,91 @@
 
   </div>
 
+  <div class="pe-lg-5">
+    
+    <section>
 
-  <section>
+      <h4>
+        نقاط قوت
+        <i class="bi bi-stars me-2"></i>
+      </h4>
 
-    <h4>
-      نقاط قوت
-      <i class="bi bi-stars me-2"></i>
-    </h4>
+      <div class="tags">
 
-    <div class="tags">
+        <span
+          class="badge bg-success"
+          *ngFor="let strength of potato.strengths">
 
-      <span
-        class="badge bg-success"
-        *ngFor="let strength of potato.strengths">
+          {{ strength }}
 
-        {{ strength }}
+        </span>
 
-      </span>
+      </div>
 
-    </div>
-
-  </section>
-
-
-  <section>
-
-    <h4>
-      نقاط ضعف
-      <i class="bi bi-exclamation-diamond me-2"></i>
-    </h4>
-
-    <div class="tags">
-
-      <span
-        class="badge bg-danger"
-        *ngFor="let weakness of potato.weaknesses">
-
-        {{ weakness }}
-
-      </span>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <section>
+    <section>
 
-    <h4>
-      خوراکی مورد علاقه
-      <i class="bi bi-cup-hot me-2"></i>
-    </h4>
+      <h4>
+        نقاط ضعف
+        <i class="bi bi-exclamation-diamond me-2"></i>
+      </h4>
 
-    <p>{{ potato.favoriteFood }}</p>
+      <div class="tags">
 
-  </section>
+        <span
+          class="badge bg-danger"
+          *ngFor="let weakness of potato.weaknesses">
 
+          {{ weakness }}
 
-  <section>
+        </span>
 
-    <h4>
-      سرگرمی مورد علاقه
-      <i class="bi bi-controller me-2"></i>
-    </h4>
+      </div>
 
-    <p>{{ potato.favoriteHobby }}</p>
-
-  </section>
+    </section>
 
 
-  <section>
+    <section>
 
-    <h4>
-      یه فکت جالب راجع به {{ potato.name }}
-      <i class="bi bi-lightbulb me-2"></i>
-    </h4>
+      <h4>
+        خوراکی مورد علاقه
+        <i class="bi bi-cup-hot me-2"></i>
+      </h4>
 
-    <blockquote class="m-0 p-3">
+      <p>{{ potato.favoriteFood }}</p>
 
-      {{ potato.funFact }}
+    </section>
 
-    </blockquote>
 
-  </section>
+    <section>
+
+      <h4>
+        سرگرمی مورد علاقه
+        <i class="bi bi-controller me-2"></i>
+      </h4>
+
+      <p>{{ potato.favoriteHobby }}</p>
+
+    </section>
+
+
+    <section>
+
+      <h4>
+        یه فکت جالب راجع به {{ potato.name }}
+        <i class="bi bi-lightbulb me-2"></i>
+      </h4>
+
+      <blockquote class="m-0 p-3">
+
+        {{ potato.funFact }}
+
+      </blockquote>
+
+    </section>
+  </div>
 
   <div
     class="signature-section mt-5"
