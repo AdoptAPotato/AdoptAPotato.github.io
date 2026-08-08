@@ -1,138 +1,60 @@
-.not-found-container {
-    position: relative;
+.page-loader {
+  min-height: 70vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    text-align: center;
-    
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
 }
 
-.bg-svg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+.loading-potato {
+  font-size: 7rem;
+  line-height: 1;
 
-    transform: translate(-50%, -50%);
-
-    opacity: 0.6;
-    z-index: 0;
-    pointer-events: none;
-
-    width: 23rem;
+  animation: potato-wiggle 1.2s ease-in-out infinite;
+  transform-origin: center bottom;
 }
 
-.not-found-container > :not(.bg-svg) {
-    position: relative;
-    z-index: 1;
+.loading-text {
+  animation: loading-pulse 1.5s ease-in-out infinite;
 }
 
 
-.potato-scene {
-    position: relative;
-
-    width: 20rem;
-    height: 20rem;
-
-    margin: auto;
-}
-
-
-.potato-character {
-    position: absolute;
-
-    width: 14rem;
-
-    left: 50%;
-    bottom: 0;
-
-    transform: translateX(-50%);
-}
-
-
-.potato-image,
-.potato-eyes {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-.potato-eyes {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    transform: translateX(0);
-}
-
-
-.butterfly {
-    position: absolute;
-
-    width: 4rem;
-
-    left: 40%;
-    top: 3rem;
-
-    animation: butterfly-fly 4s ease-in-out infinite;
-}
-
-
-@keyframes butterfly-fly {
+@keyframes potato-wiggle {
 
   0% {
-    transform: translate(-100px, 30px) rotate(-5deg);
+    transform: rotate(-10deg) translateY(0);
   }
 
   25% {
-    transform: translate(60px, 0px) rotate(5deg);
+    transform: rotate(0deg) translateY(-4px);
   }
 
   50% {
-    transform: translate(100px, 40px) rotate(-3deg);
+    transform: rotate(10deg) translateY(0);
   }
 
   75% {
-    transform: translate(-50px, 10px) rotate(4deg);
+    transform: rotate(0deg) translateY(-4px);
   }
 
   100% {
-    transform: translate(-100px, 30px) rotate(-5deg);
+    transform: rotate(-10deg) translateY(0);
   }
 
 }
 
+@keyframes loading-pulse {
 
-.potato-eyes {
-    animation: eyes-follow 4s ease-in-out infinite;
-}
+  0%,
+  100% {
+    opacity: 0.5;
+  }
 
-@keyframes eyes-follow {
-
-    0% {
-        transform: translate(-3px, 3px);
-    }
-
-    25% {
-        transform: translate(1px, 0);
-    }
-
-    50% {
-        transform: translate(3px, 3px);
-    }
-
-    75% {
-        transform: translate(-1px, 0);
-    }
-
-    100% {
-        transform: translate(-3px, 3px);
-    }
+  50% {
+    opacity: 1;
+  }
 
 }
