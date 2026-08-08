@@ -61,7 +61,13 @@ export class AboutUsComponent implements AfterViewInit {
       autoAlpha: 0
     });
 
-    this.cards.changes.subscribe(() => this.animateCards());
+    this.cards.changes.subscribe(() => {
+      this.animateCards();
+
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+      });
+    });
   }
 
   private animateCards() {
@@ -70,7 +76,7 @@ export class AboutUsComponent implements AfterViewInit {
     const img = card.nativeElement.querySelector('.char-img');
 
     gsap.to(img, {
-      scale: 1.3,
+      scale: 1.4,
       ease: "none",
       scrollTrigger: {
         trigger: card.nativeElement,
