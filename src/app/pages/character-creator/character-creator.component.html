@@ -1,4 +1,9 @@
-<div class="p-4 p-lg-5">
+<app-loading *ngIf="!imagesLoaded"></app-loading>
+
+<div 
+  class="p-4 p-lg-5"
+  [style.display]="imagesLoaded ? 'block' : 'none'">
+
   <div class="creator-steps">
     <div class="step" [class.active]="currentStep >= 1">۱</div>
     <div class="line" [class.active]="currentStep >= 2"></div>

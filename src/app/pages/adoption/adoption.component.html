@@ -1,4 +1,9 @@
-<div class="p-4 p-lg-5">
+<app-loading *ngIf="!imagesLoaded"></app-loading>
+
+<div 
+  class="p-4 p-lg-5"
+  [style.display]="imagesLoaded ? 'block' : 'none'">
+  
   <h3>
     کلی سیب‌زمینی با شخصیت‌های متفاوت... 
   </h3>

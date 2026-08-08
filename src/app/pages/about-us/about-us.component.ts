@@ -6,13 +6,15 @@ import { CommonModule, } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
 import { Character } from '../../models/character';
+import { LoadingComponent } from '../../components/loading/loading.component';
+import { AssetLoaderService } from '../../services/asset-loader.service';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 @Component({
   selector: 'app-about-us',
-  imports: [CommonModule],
+  imports: [CommonModule, LoadingComponent],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css'
 })
@@ -24,13 +26,28 @@ export class AboutUsComponent implements AfterViewInit {
 
   people: Character[] = [];
 
-  constructor(private http: HttpClient) {}
+  imagesLoaded = false;
+
+  constructor(private http: HttpClient, private assetLoader: AssetLoaderService) {}
 
   ngOnInit(): void {
     this.http.get<Character[]>('/data/us.json')
-      .subscribe(data => {
+      .subscribe(async data => {
+
         this.people = data;
-      })
+
+        const images = [
+          ...this.people.flatMap(person => [
+            person.img,
+            person.bg_img
+          ]),
+          '/textures/hr.png'
+        ];
+
+        await this.assetLoader.preloadImages(images);
+
+        this.imagesLoaded = true;
+      });
   }
 
   ngAfterViewInit() {
