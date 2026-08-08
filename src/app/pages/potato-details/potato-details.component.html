@@ -1,4 +1,4 @@
-<div class="potato-profile p-3 p-lg-5" *ngIf="potato as potato">
+<div class="potato-profile py-5 px-3 p-lg-5" *ngIf="potato as potato">
 
   <div class="profile-header mb-3">
 
@@ -35,7 +35,7 @@
         <tr>
           <td>ماه تولد</td>
 
-          <td [style.background]="birthMonthElement.color" class="text-light bd-td">
+          <td [style.background]="birthMonthElement.color" class="text-light bd-td pe-3">
 
             <div class="bd-text">
               {{ potato.birthMonth }}
@@ -61,7 +61,7 @@
 
           <td>تیپ شخصیتی</td>
 
-          <td [style.background]="mbtiType.color" class="text-light">
+          <td [style.background]="mbtiType.color" class="text-light pe-3">
             {{ mbtiType.code }}
             &nbsp;
             ✦
