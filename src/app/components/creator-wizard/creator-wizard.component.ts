@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { CommonModule, } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { NgbPopoverModule, NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import { effect } from '@angular/core';
 
@@ -16,16 +15,16 @@ import { CreatorStateService } from '../../services/creator-state.service';
 })
 export class CreatorWizardComponent implements OnInit {
 
+  @Input() categories: Category[] = [];
+
   @ViewChild('canvas', { static: true })
   canvas!: ElementRef<HTMLCanvasElement>;
 
-  categories: Category[] = [];
   selectedCategory?: Category;
   popoverItem?: Item;
   openPopover?: NgbPopover;
 
   constructor(
-    private http: HttpClient, 
     private renderer:CharacterRendererService,
     private state: CreatorStateService
   ) {
@@ -37,21 +36,16 @@ export class CreatorWizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<Category[]>('/data/creator-info.json')
-      .subscribe(data => {
-        this.categories = data;
+    this.state.equippedItems = this.categories
+      .filter(c => !c.nullable)
+      .map(c => ({
+        item: c.items[0],
+        selectedColor: c.items[0].colors?.[0] ?? null
+      }));
 
-        this.state.equippedItems = this.categories
-          .filter(c => !c.nullable)
-          .map(c => ({
-            item: c.items[0],
-            selectedColor: c.items[0].colors?.[0] ?? null
-          }));
+    this.selectedCategory = this.categories[0];
 
-        this.selectedCategory = this.categories[0];
-
-        this.render()
-      });
+    this.render();
   }
 
   render() {

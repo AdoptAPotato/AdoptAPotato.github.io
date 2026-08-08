@@ -7,6 +7,8 @@ import { PersonalityCreatorComponent } from '../../components/personality-creato
 import { CreatorSubmitComponent } from '../../components/creator-submit/creator-submit.component';
 import { AssetLoaderService } from '../../services/asset-loader.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { HttpClient } from '@angular/common/http';
+import { Category } from '../../models/creator';
 
 @Component({
   selector: 'app-character-creator',
@@ -27,11 +29,32 @@ export class CharacterCreatorComponent {
   maxSteps: number = 3;
 
   imagesLoaded = false;
+  
+  categories: Category[] = [];
 
-  constructor(private assetLoader: AssetLoaderService) {}
+  constructor(
+    private http: HttpClient,
+    private assetLoader: AssetLoaderService
+  ) {}
 
   async ngOnInit() {
+    this.http.get<Category[]>('/data/creator-info.json')
+      .subscribe(data => {
+        this.categories = data;
+      });
+
+    const imageUrls = this.categories
+      .flatMap(category => category.items)
+      .flatMap(item => [
+        item.thumbnail,
+        item.mask,
+        item.shadow,
+        item.fixed
+      ])
+      .filter((url): url is string => !!url);
+
     const images = [
+      ...imageUrls,
       '/sample POTATO/real.png',
       '/sample POTATO/arrow.png',
       '/sample POTATO/animation.png',

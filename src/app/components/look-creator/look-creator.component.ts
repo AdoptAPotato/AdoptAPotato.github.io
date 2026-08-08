@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { CreatorWizardComponent } from '../../components/creator-wizard/creator-wizard.component';
-import { ExtraItem } from '../../models/creator';
+import { Category, ExtraItem } from '../../models/creator';
 import { CreatorStateService } from '../../services/creator-state.service';
 import { PricingService } from '../../services/pricing.service';
 import { SIZES } from '../../data/constants';
@@ -19,6 +19,8 @@ import { SIZES } from '../../data/constants';
   styleUrl: './look-creator.component.css'
 })
 export class LookCreatorComponent {
+
+  @Input() categories: Category[] = [];
 
   isDragging = false;
   
