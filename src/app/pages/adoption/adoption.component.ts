@@ -41,6 +41,7 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
     this.filteredPotatoes = [...this.potatoes];
 
     const images = [
+      '/textures/chuck line.png',
       '/textures/tape.png',
       '/textures/paper.png',
       '/textures/hr.png',
