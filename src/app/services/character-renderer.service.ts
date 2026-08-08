@@ -96,7 +96,7 @@ export class CharacterRendererService {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // draw the base
-    const baseImg = await this.loadImage("/base.png");
+    const baseImg = await this.loadImage("/wizard/base.png");
     
     canvas.width = baseImg.width;
     canvas.height = baseImg.height;

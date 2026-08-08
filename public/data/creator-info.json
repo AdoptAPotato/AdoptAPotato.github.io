@@ -1,266 +1,271 @@
 [
     {
         "name": "eye",
-        "image": "categories/eyes.png",
+        "image": "/wizard/categories/eyes.png",
         "nullable": false,
         "items": [
             {
-                "thumbnail": "/eye/eye 1_thumbnail.png",
-                "fixed": "/eye/eye 1.png",
+                "thumbnail": "/wizard/eye/eye 1_thumbnail.png",
+                "fixed": "/wizard/eye/eye 1.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 2_thumbnail.png",
-                "fixed": "/eye/eye 2.png",
+                "thumbnail": "/wizard/eye/eye 2_thumbnail.png",
+                "fixed": "/wizard/eye/eye 2.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 3_thumbnail.png",
-                "fixed": "/eye/eye 3.png",
+                "thumbnail": "/wizard/eye/eye 3_thumbnail.png",
+                "fixed": "/wizard/eye/eye 3.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 4_thumbnail.png",
-                "fixed": "/eye/eye 4.png",
+                "thumbnail": "/wizard/eye/eye 4_thumbnail.png",
+                "fixed": "/wizard/eye/eye 4.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 5_thumbnail.png",
-                "fixed": "/eye/eye 5.png",
+                "thumbnail": "/wizard/eye/eye 5_thumbnail.png",
+                "fixed": "/wizard/eye/eye 5.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 6_thumbnail.png",
-                "fixed": "/eye/eye 6.png",
+                "thumbnail": "/wizard/eye/eye 6_thumbnail.png",
+                "fixed": "/wizard/eye/eye 6.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 7_thumbnail.png",
-                "fixed": "/eye/eye 7.png",
+                "thumbnail": "/wizard/eye/eye 7_thumbnail.png",
+                "fixed": "/wizard/eye/eye 7.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 8_thumbnail.png",
-                "fixed": "/eye/eye 8.png",
+                "thumbnail": "/wizard/eye/eye 8_thumbnail.png",
+                "fixed": "/wizard/eye/eye 8.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 9_thumbnail.png",
-                "fixed": "/eye/eye 9.png",
+                "thumbnail": "/wizard/eye/eye 9_thumbnail.png",
+                "fixed": "/wizard/eye/eye 9.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 10_thumbnail.png",
-                "fixed": "/eye/eye 10.png",
+                "thumbnail": "/wizard/eye/eye 10_thumbnail.png",
+                "fixed": "/wizard/eye/eye 10.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 11_thumbnail.png",
-                "fixed": "/eye/eye 11.png",
+                "thumbnail": "/wizard/eye/eye 11_thumbnail.png",
+                "fixed": "/wizard/eye/eye 11.png",
                 "group_id": 1
             },
             {
-                "thumbnail": "/eye/eye 12_thumbnail.png",
-                "fixed": "/eye/eye 12.png",
+                "thumbnail": "/wizard/eye/eye 12_thumbnail.png",
+                "fixed": "/wizard/eye/eye 12.png",
+                "group_id": 1
+            },
+            {
+                "thumbnail": "/wizard/eye/eye 13_thumbnail.png",
+                "fixed": "/wizard/eye/eye 13.png",
                 "group_id": 1
             }
         ]
     },
     {
         "name": "mouth",
-        "image": "categories/mouth.png",
+        "image": "/wizard/categories/mouth.png",
         "nullable": false,
         "items": [
             {
-                "thumbnail": "/mouth/mouth 1_thumbnail.png",
-                "fixed": "/mouth/mouth 1.png",
+                "thumbnail": "/wizard/mouth/mouth 1_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 1.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 2_thumbnail.png",
-                "fixed": "/mouth/mouth 2.png",
+                "thumbnail": "/wizard/mouth/mouth 2_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 2.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 3_thumbnail.png",
-                "fixed": "/mouth/mouth 3.png",
+                "thumbnail": "/wizard/mouth/mouth 3_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 3.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 4_thumbnail.png",
-                "fixed": "/mouth/mouth 4.png",
+                "thumbnail": "/wizard/mouth/mouth 4_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 4.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 5_thumbnail.png",
-                "fixed": "/mouth/mouth 5.png",
+                "thumbnail": "/wizard/mouth/mouth 5_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 5.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 6_thumbnail.png",
-                "fixed": "/mouth/mouth 6.png",
+                "thumbnail": "/wizard/mouth/mouth 6_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 6.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 7_thumbnail.png",
-                "fixed": "/mouth/mouth 7.png",
+                "thumbnail": "/wizard/mouth/mouth 7_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 7.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 8_thumbnail.png",
-                "fixed": "/mouth/mouth 8.png",
+                "thumbnail": "/wizard/mouth/mouth 8_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 8.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 9_thumbnail.png",
-                "fixed": "/mouth/mouth 9.png",
+                "thumbnail": "/wizard/mouth/mouth 9_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 9.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 10_thumbnail.png",
-                "fixed": "/mouth/mouth 10.png",
+                "thumbnail": "/wizard/mouth/mouth 10_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 10.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 11_thumbnail.png",
-                "fixed": "/mouth/mouth 11.png",
+                "thumbnail": "/wizard/mouth/mouth 11_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 11.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 12_thumbnail.png",
-                "fixed": "/mouth/mouth 12.png",
+                "thumbnail": "/wizard/mouth/mouth 12_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 12.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 13_thumbnail.png",
-                "fixed": "/mouth/mouth 13.png",
+                "thumbnail": "/wizard/mouth/mouth 13_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 13.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 14_thumbnail.png",
-                "fixed": "/mouth/mouth 14.png",
+                "thumbnail": "/wizard/mouth/mouth 14_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 14.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 15_thumbnail.png",
-                "fixed": "/mouth/mouth 15.png",
+                "thumbnail": "/wizard/mouth/mouth 15_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 15.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 16_thumbnail.png",
-                "fixed": "/mouth/mouth 16.png",
+                "thumbnail": "/wizard/mouth/mouth 16_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 16.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 17_thumbnail.png",
-                "fixed": "/mouth/mouth 17.png",
+                "thumbnail": "/wizard/mouth/mouth 17_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 17.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 18_thumbnail.png",
-                "fixed": "/mouth/mouth 18.png",
+                "thumbnail": "/wizard/mouth/mouth 18_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 18.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 19_thumbnail.png",
-                "fixed": "/mouth/mouth 19.png",
+                "thumbnail": "/wizard/mouth/mouth 19_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 19.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 20_thumbnail.png",
-                "fixed": "/mouth/mouth 20.png",
+                "thumbnail": "/wizard/mouth/mouth 20_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 20.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 21_thumbnail.png",
-                "fixed": "/mouth/mouth 21.png",
+                "thumbnail": "/wizard/mouth/mouth 21_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 21.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 22_thumbnail.png",
-                "fixed": "/mouth/mouth 22.png",
+                "thumbnail": "/wizard/mouth/mouth 22_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 22.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 23_thumbnail.png",
-                "fixed": "/mouth/mouth 23.png",
+                "thumbnail": "/wizard/mouth/mouth 23_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 23.png",
                 "group_id": 2
             },
             {
-                "thumbnail": "/mouth/mouth 24_thumbnail.png",
-                "fixed": "/mouth/mouth 24.png",
+                "thumbnail": "/wizard/mouth/mouth 24_thumbnail.png",
+                "fixed": "/wizard/mouth/mouth 24.png",
                 "group_id": 2
             }
         ]
     },
     {
         "name": "marks",
-        "image": "categories/mark.png",
+        "image": "/wizard/categories/mark.png",
         "nullable": true,
         "items": [
             {
-                "thumbnail": "/marks/mark 1_thumbnail.png",
-                "fixed": "/marks/mark 1.png",
+                "thumbnail": "/wizard/marks/mark 1_thumbnail.png",
+                "fixed": "/wizard/marks/mark 1.png",
                 "group_id": 3
             },
             {
-                "thumbnail": "/marks/mark 2_thumbnail.png",
-                "fixed": "/marks/mark 2.png",
+                "thumbnail": "/wizard/marks/mark 2_thumbnail.png",
+                "fixed": "/wizard/marks/mark 2.png",
                 "group_id": 4
             }
         ]
     },
     {
         "name": "glasses",
-        "image": "categories/glasses.png",
+        "image": "/wizard/categories/glasses.png",
         "nullable": true,
         "items": [
             {
-                "thumbnail": "/glasses/glasses 1_thumbnail.png",
-                "mask": "/glasses/frame 1_mask.png",
-                "shadow": "/glasses/frame 1_shadow.png",
-                "fixed": "/glasses/lens 1.1.png",
+                "thumbnail": "/wizard/glasses/glasses 1_thumbnail.png",
+                "mask": "/wizard/glasses/frame 1_mask.png",
+                "shadow": "/wizard/glasses/frame 1_shadow.png",
+                "fixed": "/wizard/glasses/lens 1.1.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 5,
                 "z_index": 1
             },
             {
-                "thumbnail": "/glasses/glasses 2_thumbnail.png",
-                "mask": "/glasses/frame 1_mask.png",
-                "shadow": "/glasses/frame 1_shadow.png",
-                "fixed": "/glasses/lens 1.2.png",
+                "thumbnail": "/wizard/glasses/glasses 2_thumbnail.png",
+                "mask": "/wizard/glasses/frame 1_mask.png",
+                "shadow": "/wizard/glasses/frame 1_shadow.png",
+                "fixed": "/wizard/glasses/lens 1.2.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 5,
                 "z_index": 1
             },
             {
-                "thumbnail": "/glasses/glasses 3_thumbnail.png",
-                "mask": "/glasses/frame 2_mask.png",
-                "fixed": "/glasses/lens 2.1.png",
+                "thumbnail": "/wizard/glasses/glasses 3_thumbnail.png",
+                "mask": "/wizard/glasses/frame 2_mask.png",
+                "fixed": "/wizard/glasses/lens 2.1.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 5,
                 "z_index": 1
             },
             {
-                "thumbnail": "/glasses/glasses 4_thumbnail.png",
-                "mask": "/glasses/frame 2_mask.png",
-                "fixed": "/glasses/lens 2.2.png",
+                "thumbnail": "/wizard/glasses/glasses 4_thumbnail.png",
+                "mask": "/wizard/glasses/frame 2_mask.png",
+                "fixed": "/wizard/glasses/lens 2.2.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 5,
                 "z_index": 1
             },
             {
-                "thumbnail": "/glasses/glasses 5_thumbnail.png",
-                "mask": "/glasses/frame 3_mask.png",
-                "fixed": "/glasses/lens 3.1.png",
+                "thumbnail": "/wizard/glasses/glasses 5_thumbnail.png",
+                "mask": "/wizard/glasses/frame 3_mask.png",
+                "fixed": "/wizard/glasses/lens 3.1.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 5,
                 "z_index": 1
             },
             {
-                "thumbnail": "/glasses/glasses 6_thumbnail.png",
-                "mask": "/glasses/frame 3_mask.png",
-                "fixed": "/glasses/lens 3.2.png",
+                "thumbnail": "/wizard/glasses/glasses 6_thumbnail.png",
+                "mask": "/wizard/glasses/frame 3_mask.png",
+                "fixed": "/wizard/glasses/lens 3.2.png",
                 "colors": ["#111111", "#d9b843", "#113078", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 5,
                 "z_index": 1
@@ -269,80 +274,80 @@
     },
     {
         "name": "hats",
-        "image": "categories/hat.png",
+        "image": "/wizard/categories/hat.png",
         "nullable": true,
         "items": [
             {
-                "thumbnail": "/hats/hat 1_thumbnail.png",
-                "mask": "/hats/hat 1_mask.png",
-                "shadow": "/hats/hat 1_shadow.png",
+                "thumbnail": "/wizard/hats/hat 1_thumbnail.png",
+                "mask": "/wizard/hats/hat 1_mask.png",
+                "shadow": "/wizard/hats/hat 1_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 6
             },
             {
-                "thumbnail": "/hats/hat 2_thumbnail.png",
-                "mask": "/hats/hat 2_mask.png",
-                "shadow": "/hats/hat 3_shadow.png",
+                "thumbnail": "/wizard/hats/hat 2_thumbnail.png",
+                "mask": "/wizard/hats/hat 2_mask.png",
+                "shadow": "/wizard/hats/hat 3_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 6
             },
             {
-                "thumbnail": "/hats/hat 3_thumbnail.png",
-                "mask": "/hats/hat 3_mask.png",
-                "shadow": "/hats/hat 3_shadow.png",
+                "thumbnail": "/wizard/hats/hat 3_thumbnail.png",
+                "mask": "/wizard/hats/hat 3_mask.png",
+                "shadow": "/wizard/hats/hat 3_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 6
             },
             {
-                "thumbnail": "/hats/hat 4_thumbnail.png",
-                "mask": "/hats/hat 4_mask.png",
-                "shadow": "/hats/hat 4_shadow.png",
+                "thumbnail": "/wizard/hats/hat 4_thumbnail.png",
+                "mask": "/wizard/hats/hat 4_mask.png",
+                "shadow": "/wizard/hats/hat 4_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 6
             },
             {
-                "thumbnail": "/hats/hat 5_thumbnail.png",
-                "fixed": "/hats/hat 5.png",
+                "thumbnail": "/wizard/hats/hat 5_thumbnail.png",
+                "fixed": "/wizard/hats/hat 5.png",
                 "group_id": 6,
                 "z_index": 2
             },
             {
-                "thumbnail": "/hats/hat 6_thumbnail.png",
-                "fixed": "/hats/hat 6.png",
+                "thumbnail": "/wizard/hats/hat 6_thumbnail.png",
+                "fixed": "/wizard/hats/hat 6.png",
                 "group_id": 6,
                 "z_index": 2
             },
             {
-                "thumbnail": "/hats/hat 7_thumbnail.png",
-                "mask": "/hats/hat 7_mask.png",
-                "fixed": "/hats/hat 7_fixed.png",
+                "thumbnail": "/wizard/hats/hat 7_thumbnail.png",
+                "mask": "/wizard/hats/hat 7_mask.png",
+                "fixed": "/wizard/hats/hat 7_fixed.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 7,
                 "z_index": 1
             },
             {
-                "thumbnail": "/hats/hat 8_thumbnail.png",
-                "mask": "/hats/hat 8_mask.png",
-                "fixed": "/hats/hat 8_fixed.png",
+                "thumbnail": "/wizard/hats/hat 8_thumbnail.png",
+                "mask": "/wizard/hats/hat 8_mask.png",
+                "fixed": "/wizard/hats/hat 8_fixed.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 7,
                 "z_index": 1
             },
             {
-                "thumbnail": "/hats/hat 9_thumbnail.png",
-                "fixed": "/hats/hat 9.png",
+                "thumbnail": "/wizard/hats/hat 9_thumbnail.png",
+                "fixed": "/wizard/hats/hat 9.png",
                 "group_id": 6,
                 "z_index": 2
             },
             {
-                "thumbnail": "/hats/hat 10_thumbnail.png",
-                "fixed": "/hats/hat 10.png",
+                "thumbnail": "/wizard/hats/hat 10_thumbnail.png",
+                "fixed": "/wizard/hats/hat 10.png",
                 "group_id": 8,
                 "z_index": 2
             },
             {
-                "thumbnail": "/hats/hat 11_thumbnail.png",
-                "fixed": "/hats/hat 11.png",
+                "thumbnail": "/wizard/hats/hat 11_thumbnail.png",
+                "fixed": "/wizard/hats/hat 11.png",
                 "group_id": 6,
                 "z_index": 2
             }
@@ -350,79 +355,79 @@
     },
     {
         "name": "extra",
-        "image": "categories/extra.png",
+        "image": "/wizard/categories/extra.png",
         "nullable": true,
         "items": [
             {
-                "thumbnail": "/extra/blanket_thumbnail.png",
-                "mask": "/extra/blanket_mask.png",
-                "shadow": "/extra/blanket_shadow.png",
+                "thumbnail": "/wizard/extra/blanket_thumbnail.png",
+                "mask": "/wizard/extra/blanket_mask.png",
+                "shadow": "/wizard/extra/blanket_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 10,
                 "z_index": 3
             },
             {
-                "thumbnail": "/extra/tie_thumbnail.png",
-                "mask": "/extra/tie_mask.png",
-                "shadow": "/extra/tie_shadow.png",
+                "thumbnail": "/wizard/extra/tie_thumbnail.png",
+                "mask": "/wizard/extra/tie_mask.png",
+                "shadow": "/wizard/extra/tie_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 13
             },
             {
-                "thumbnail": "/extra/bowtie_thumbnail.png",
-                "mask": "/extra/bowtie_mask.png",
-                "shadow": "/extra/bowtie_shadow.png",
+                "thumbnail": "/wizard/extra/bowtie_thumbnail.png",
+                "mask": "/wizard/extra/bowtie_mask.png",
+                "shadow": "/wizard/extra/bowtie_shadow.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 13
             },
             {
-                "thumbnail": "/extra/book_thumbnail.png",
-                "mask": "/extra/book_mask.png",
-                "shadow": "/extra/book_shadow.png",
-                "fixed": "/extra/book_fixed.png",
+                "thumbnail": "/wizard/extra/book_thumbnail.png",
+                "mask": "/wizard/extra/book_mask.png",
+                "shadow": "/wizard/extra/book_shadow.png",
+                "fixed": "/wizard/extra/book_fixed.png",
                 "colors": ["#111111", "#eeeeee", "#113078", "#196110", "#7227a3", "#d61aaa", "#7d0c0c"],
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/camera_thumbnail.png",
-                "mask": "/extra/camera.png",
+                "thumbnail": "/wizard/extra/camera_thumbnail.png",
+                "mask": "/wizard/extra/camera.png",
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/cola_thumbnail.png",
-                "mask": "/extra/cola.png",
+                "thumbnail": "/wizard/extra/cola_thumbnail.png",
+                "mask": "/wizard/extra/cola.png",
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/donut_thumbnail.png",
-                "mask": "/extra/donut.png",
+                "thumbnail": "/wizard/extra/donut_thumbnail.png",
+                "mask": "/wizard/extra/donut.png",
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/doogh_thumbnail.png",
-                "mask": "/extra/doogh.png",
+                "thumbnail": "/wizard/extra/doogh_thumbnail.png",
+                "mask": "/wizard/extra/doogh.png",
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/joystick_thumbnail.png",
-                "mask": "/extra/joystick.png",
+                "thumbnail": "/wizard/extra/joystick_thumbnail.png",
+                "mask": "/wizard/extra/joystick.png",
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/paint_thumbnail.png",
-                "mask": "/extra/paint.png",
+                "thumbnail": "/wizard/extra/paint_thumbnail.png",
+                "mask": "/wizard/extra/paint.png",
                 "group_id": 12,
                 "z_index": 1
             },
             {
-                "thumbnail": "/extra/pizza_thumbnail.png",
-                "mask": "/extra/pizza.png",
+                "thumbnail": "/wizard/extra/pizza_thumbnail.png",
+                "mask": "/wizard/extra/pizza.png",
                 "group_id": 12,
                 "z_index": 1
             }
