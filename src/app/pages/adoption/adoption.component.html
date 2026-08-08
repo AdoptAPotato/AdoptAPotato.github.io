@@ -1,4 +1,4 @@
-<div class="p-5">
+<div class="p-4 p-lg-5">
   <h3>
     کلی سیب‌زمینی با شخصیت‌های متفاوت... 
   </h3>
@@ -35,11 +35,28 @@
     </div>
   </div>
 
-  <div class="cards-grid">
-    <app-potato-card 
-      *ngFor="let potato of filteredPotatoes" 
-      [potato]="potato">
-    </app-potato-card>
+  <div *ngIf="filteredPotatoes.length > 0" class="cards-grid potato-stack">
+
+    <div
+      class="potato-wrapper"
+      *ngFor="let potato of filteredPotatoes">
+
+      <app-potato-card
+        [potato]="potato">
+      </app-potato-card>
+
+    </div>
+
+    <div style="height: 100vh;"></div>
+
+  </div>
+
+  <div class="stack-end text-center sm-view mb-5">
+
+    <img src="/textures/hr.png" class="hr my-4">
+    
+    فعلاً همینا رو داشتیم!
+  
   </div>
 
   <p *ngIf="filteredPotatoes.length === 0" class="text-center text-muted">

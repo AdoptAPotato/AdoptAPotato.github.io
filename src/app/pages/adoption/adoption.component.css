@@ -21,3 +21,35 @@ h3 {
 
   z-index: -1;
 }
+
+
+
+@media (max-width: 768px) {
+
+  .potato-stack {
+
+    position: relative;
+
+  }
+
+  .potato-wrapper {
+
+    position: sticky;
+
+    top: 2rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+  }
+
+  .stack-end {
+
+    display: block;
+
+  }
+
+}
