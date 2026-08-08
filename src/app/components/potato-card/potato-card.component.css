@@ -120,10 +120,7 @@
 
 }
 
-
 .info-table {
-    
-    border-collapse:separate;
 
     border-spacing:0;
 
@@ -137,8 +134,9 @@
 
     font-weight:600;
 
-}
+    border: none !important;
 
+}
 
 .info-table tr:not(:last-child) td {
 
