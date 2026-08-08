@@ -27,12 +27,15 @@
 
     border-radius: 1.5rem;
 
+    position: relative;
+    display: inline-block;
+
     background:
         radial-gradient(circle,#ffffff,#efe8d5);
 
 }
 
-.photo-section img {
+.potato-img {
 
     width: 100%;
 
@@ -42,6 +45,19 @@
 
     filter:
         drop-shadow(0 12px 12px rgba(0,0,0,.18));
+
+}
+
+.tape-image {
+
+    position: absolute;
+    top: -13%;
+
+    width: 70%;
+
+    z-index: 1;
+
+    opacity: 0.9;
 
 }
 
