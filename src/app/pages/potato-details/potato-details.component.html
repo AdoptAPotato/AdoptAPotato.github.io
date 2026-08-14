@@ -24,7 +24,7 @@
 
         <tr>
           <td>کد ملی</td>
-          <td>{{ potato.id }}</td>
+          <td>{{ potato.national_id }}</td>
         </tr>
 
         <tr>
@@ -35,10 +35,10 @@
         <tr>
           <td>ماه تولد</td>
 
-          <td [style.background]="birthMonthElement.color" class="text-light bd-td pe-3">
+          <td [style.background]="birth_monthElement.color" class="text-light bd-td pe-3">
 
             <div class="bd-text">
-              {{ potato.birthMonth }}
+              {{ potato.birth_month }}
               &nbsp;
               ✦
               <span class="lg-view">
@@ -48,10 +48,10 @@
                 <br>
               </span>
               عنصر: 
-              {{ birthMonthElement.name }}
+              {{ birth_monthElement.name }}
             </div>
             
-            <img [src]="'/elements/' + birthMonthElement.img" class="element-img">
+            <img [src]="'/elements/' + birth_monthElement.img" class="element-img">
 
           </td>
 
@@ -130,7 +130,7 @@
         <i class="bi bi-cup-hot me-2"></i>
       </h4>
 
-      <p>{{ potato.favoriteFood }}</p>
+      <p>{{ potato.favorite_food }}</p>
 
     </section>
 
@@ -142,7 +142,7 @@
         <i class="bi bi-controller me-2"></i>
       </h4>
 
-      <p>{{ potato.favoriteHobby }}</p>
+      <p>{{ potato.favorite_hobby }}</p>
 
     </section>
 
@@ -156,7 +156,7 @@
 
       <blockquote class="m-0 p-3">
 
-        {{ potato.funFact }}
+        {{ potato.fun_fact }}
 
       </blockquote>
 
@@ -222,7 +222,7 @@
     </p>
     <p>
       <b>
-        کد ملی این سیب‌زمینی:  {{ potato.id }}
+        کد ملی این سیب‌زمینی:  {{ potato.national_id }}
       </b>
     </p>
 

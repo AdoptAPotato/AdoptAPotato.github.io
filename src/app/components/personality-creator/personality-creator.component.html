@@ -15,14 +15,14 @@
         ✦
         &nbsp;
         عنصر:
-        <span *ngIf="state.birthMonth" [style.color]="elements[state.birthMonth.element].color">
-          {{ elements[state.birthMonth.element].name }}
-          <img src="/elements/{{ elements[state.birthMonth.element].img }}" class="element-img">
+        <span *ngIf="state.birth_month" [style.color]="elements[state.birth_month.element].color">
+          {{ elements[state.birth_month.element].name }}
+          <img src="/elements/{{ elements[state.birth_month.element].img }}" class="element-img">
         </span>
-        <span *ngIf="!state.birthMonth">-</span>
+        <span *ngIf="!state.birth_month">-</span>
       </label>
 
-      <select class="form-select" [(ngModel)]="state.birthMonth">
+      <select class="form-select" [(ngModel)]="state.birth_month">
         <option disabled selected>
           انتخاب ماه
         </option>

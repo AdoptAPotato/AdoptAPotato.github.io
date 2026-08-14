@@ -22,6 +22,6 @@ export class CreatorStateService {
 
   orderID: number = 1234;
 
-  birthMonth: { name: string; element: string } | null = null;
+  birth_month: { name: string; element: string } | null = null;
   
 }

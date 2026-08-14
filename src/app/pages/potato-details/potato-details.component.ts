@@ -4,8 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ViewChild, TemplateRef } from '@angular/core';
 
-import { ELEMENTS, MBTI_TYPES, MONTHS, POTATOES, SIZES } from '../../data/constants';
+import { ELEMENTS, MBTI_TYPES, MONTHS, SIZES } from '../../data/constants';
 import { Potato } from '../../models/potato';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-potato-details',
@@ -18,7 +19,7 @@ export class PotatoDetailsComponent implements OnInit {
   potato?: Potato;
 
   mbtiType: any;
-  birthMonthElement: any;
+  birth_monthElement: any;
   size: any;
 
   signed = false;
@@ -28,17 +29,18 @@ export class PotatoDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private api: ApiService
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id');
+    const national_id = this.route.snapshot.paramMap.get('id');
 
-    if (!id) return;
+    if (!national_id) return;
 
-    this.potato = POTATOES.find(p => p.id === +id);
+    this.potato = this.api.getPotatoById(national_id);
 
-    this.birthMonthElement = ELEMENTS[MONTHS.find(t => t.name === this.potato!.birthMonth)!.element];
+    this.birth_monthElement = ELEMENTS[MONTHS.find(t => t.name === this.potato!.birth_month)!.element];
     this.mbtiType = MBTI_TYPES.find(t => t.code === this.potato!.mbti);
     this.size = SIZES.find(t => t.code === this.potato!.size);
   }

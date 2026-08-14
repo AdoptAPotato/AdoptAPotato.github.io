@@ -14,11 +14,11 @@ export class PotatoCardComponent implements OnInit {
 
   @Input() potato!: Potato;
 
-  birthMonthElement: any;
+  birth_monthElement: any;
   mbtiType: any;
 
   ngOnInit(): void {
-    this.birthMonthElement = ELEMENTS[MONTHS.find(t => t.name === this.potato.birthMonth)!.element];
+    this.birth_monthElement = ELEMENTS[MONTHS.find(t => t.name === this.potato.birth_month)!.element];
     this.mbtiType = MBTI_TYPES.find(t => t.code === this.potato.mbti);
   }
 

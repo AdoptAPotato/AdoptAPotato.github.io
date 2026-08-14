@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { PotatoCardComponent } from '../../components/potato-card/potato-card.component';
-import { MBTI_TYPES, MONTHS, POTATOES } from '../../data/constants';
+import { MBTI_TYPES, MONTHS } from '../../data/constants';
 import { Potato } from '../../models/potato';
 import { AssetLoaderService } from '../../services/asset-loader.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { ApiService } from '../../services/api.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-adoption',
@@ -16,14 +18,11 @@ import { LoadingComponent } from '../../components/loading/loading.component';
 })
 export class AdoptionComponent implements OnInit, AfterViewInit {
 
+  potatoes: Potato[] = [];
   filteredPotatoes: Potato[] = [];
   
   filterMbti: string = '';
   filterMonth: string = '';
-
-  get potatoes() {
-    return POTATOES
-  }
   
   get mbtiTypes() {
     return MBTI_TYPES;
@@ -35,22 +34,46 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
 
   imagesLoaded = false;
   
-  constructor(private assetLoader: AssetLoaderService) {}
+  constructor(
+    private assetLoader: AssetLoaderService,
+    private api: ApiService
+  ) {}
 
   async ngOnInit() {
-    this.filteredPotatoes = [...this.potatoes];
+    await this.loadPotatoes();
 
     const images = [
       '/textures/chuck line.png',
       '/textures/tape.png',
       '/textures/paper.png',
       '/textures/hr.png',
-      '/textures/paper_cropped.png'
+      '/textures/paper_cropped.png',
+
+      ...this.potatoes.map(potato => potato.image)
     ];
 
     await this.assetLoader.preloadImages(images);
 
     this.imagesLoaded = true;
+  }
+
+  async loadPotatoes() {
+    try {
+      const potatoes = await firstValueFrom(
+        this.api.getPotatoes()
+      );
+
+      this.potatoes = potatoes.map(potato => ({
+        ...potato,
+        image: this.api.getImageUrl(potato.image)
+      }));
+
+      this.api.setPotatoes(this.potatoes);
+
+      this.filteredPotatoes = [...this.potatoes];
+    } catch (error) {
+      console.error('Failed to load potatoes', error);
+    }
   }
 
   ngAfterViewInit() {
@@ -63,7 +86,7 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
   applyFilters() {
     this.filteredPotatoes = this.potatoes.filter(potato => {
       const matchMbti = !this.filterMbti || potato.mbti === this.filterMbti;
-      const matchMonth = !this.filterMonth || potato.birthMonth === this.filterMonth;
+      const matchMonth = !this.filterMonth || potato.birth_month === this.filterMonth;
       return matchMbti && matchMonth;
     });
   }

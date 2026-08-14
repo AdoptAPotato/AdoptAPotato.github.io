@@ -1,4 +1,4 @@
-<div class="potato-card h-100" [routerLink]="['/adoption', potato.id]">
+<div class="potato-card h-100" [routerLink]="['/adoption', potato.national_id]">
 
   <div class="card-inner h-100">
 
@@ -8,8 +8,8 @@
             class="element-badge mt-1 me-1">
 
             <img
-            [src]="'/elements/' + birthMonthElement.img"
-            [alt]="birthMonthElement.name"
+            [src]="'/elements/' + birth_monthElement.img"
+            [alt]="birth_monthElement.name"
             class="w-75">
         </span>
 
