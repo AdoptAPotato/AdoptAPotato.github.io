@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private apiUrl = 'http://127.0.0.1:8000/api/potatoes/';
-  private mediaUrl = 'http://127.0.0.1:8000';
 
   private potatoes: Potato[] = [];
 
@@ -28,8 +27,4 @@ export class ApiService {
     return this.potatoes.find(p => p.national_id === national_id);
   }
 
-  getImageUrl(image: string): string {
-    return this.mediaUrl + image;
-  }
-  
 }

@@ -49,7 +49,9 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
       '/textures/hr.png',
       '/textures/paper_cropped.png',
 
-      ...this.potatoes.map(potato => potato.image)
+      ...this.potatoes.map(potato =>
+        potato.image
+      )
     ];
 
     await this.assetLoader.preloadImages(images);
@@ -59,14 +61,9 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
 
   async loadPotatoes() {
     try {
-      const potatoes = await firstValueFrom(
+      this.potatoes = await firstValueFrom(
         this.api.getPotatoes()
       );
-
-      this.potatoes = potatoes.map(potato => ({
-        ...potato,
-        image: this.api.getImageUrl(potato.image)
-      }));
 
       this.api.setPotatoes(this.potatoes);
 
