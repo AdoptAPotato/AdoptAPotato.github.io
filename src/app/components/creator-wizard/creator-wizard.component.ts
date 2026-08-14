@@ -25,7 +25,7 @@ export class CreatorWizardComponent implements OnInit {
   openPopover?: NgbPopover;
 
   constructor(
-    private renderer:CharacterRendererService,
+    private renderer: CharacterRendererService,
     private state: CreatorStateService
   ) {
     effect(() => {

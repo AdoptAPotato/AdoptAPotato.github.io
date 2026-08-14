@@ -2,26 +2,38 @@ import { Injectable } from '@angular/core';
 import { signal } from '@angular/core';
 
 import { EquippedItem, ExtraItem } from '../models/creator';
+import { ELEMENTS, MONTHS } from '../data/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CreatorStateService {
 
+  nationalID: string = '';
+  
   potatoName = signal('Max the POTATO');
+  size: string = 'XS';
+  description: string = '';
 
-  equippedItems: EquippedItem[] = [];
+  birthMonth: string | undefined = undefined;
+  mbti: string | undefined = undefined;
+  favoriteFood: string = '';
+  favoriteHobby: string = '';
+  funFact: string = '';
+
+  strengths: string[] = [];
+  weaknesses: string[] = [];
+
+  additionalImages: File[] = [];
 
   extraItems: ExtraItem[] = [];
 
-  strengths: string[] = [];
+  // Only used in the wizard
+  equippedItems: EquippedItem[] = [];
 
-  weaknesses: string[] = [];
 
-  boxWidth: number = 4;
-
-  orderID: number = 1234;
-
-  birth_month: { name: string; element: string } | null = null;
+  get element() {
+    return ELEMENTS[MONTHS.find(t => t.name === this.birthMonth)!.element]
+  }
   
 }

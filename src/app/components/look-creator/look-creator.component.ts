@@ -83,6 +83,7 @@ export class LookCreatorComponent {
         file,
         preview: URL.createObjectURL(file)
       });
+      this.state.additionalImages.push(file);
 
     });
   }
@@ -93,6 +94,7 @@ export class LookCreatorComponent {
     URL.revokeObjectURL(image.preview);
 
     this.images = this.images.filter(i => i !== image);
+    this.state.additionalImages = this.state.additionalImages.filter(i => i !== image.file);
   }
 
   addItem() {

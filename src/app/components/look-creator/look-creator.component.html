@@ -20,13 +20,14 @@
 
             <select
                 class="form-select"
-                [(ngModel)]="state.boxWidth"
-                name="boxWidth">
+                [(ngModel)]="state.size"
+                name="size">
 
                 <option
                     *ngFor="let size of sizes"
-                    [ngValue]="size.width">
+                    [ngValue]="size.code">
                     {{ size.width.toLocaleString('fa-IR') }} سانتی متر
+                    ({{ size.code }})
                 </option>
             </select>
         </div>
@@ -164,7 +165,13 @@
 
         <div class="mb-4">
             <label for="descriptionTextarea" class="form-label">هر توضیح دیگه‌ای که لازم می‌دونی بدونیم رو اینجا اضافه کن (ویژگی‌های مهم، رنگ متفاوت برای آیتم‌ها و...)</label>
-            <textarea class="form-control" id="descriptionTextarea" rows="3"></textarea>
+            <textarea 
+                class="form-control" 
+                id="descriptionTextarea" 
+                name="descriptionTextarea"
+                rows="3" 
+                [(ngModel)]="state.description"
+            ></textarea>
         </div>
     </form>
 

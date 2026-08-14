@@ -22,7 +22,7 @@ export class PricingService {
 
     breakdown.push({
       title: 'هزینه پایه (بر حسب سایز جعبه)',
-      cost: BASIC_COST[this.state.boxWidth]
+      cost: BASIC_COST[this.state.size]
     });
 
     const readyCount =

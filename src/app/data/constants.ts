@@ -55,12 +55,12 @@ export const MONTHS = [
 
 
 // Pricing
-export const BASIC_COST: Record<number, number> = {
-    4: 300,
-    5: 325,
-    6: 350,
-    7: 375,
-    8: 400
+export const BASIC_COST: Record<string, number> = {
+    'XS': 300,
+    'S': 325,
+    'M': 350,
+    'L': 375,
+    'XL': 400
 };
 
 export const READY_ITEM_COST = 100;

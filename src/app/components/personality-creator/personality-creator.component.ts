@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { CreatorStateService } from '../../services/creator-state.service';
-import { MBTI_TYPES, ELEMENTS, MONTHS } from '../../data/constants';
+import { MBTI_TYPES, MONTHS } from '../../data/constants';
 
 
 @Component({
@@ -18,10 +18,6 @@ export class PersonalityCreatorComponent {
 
   get mbtiTypes() {
     return MBTI_TYPES;
-  }
-
-  get elements() {
-    return ELEMENTS;
   }
 
   get months() {

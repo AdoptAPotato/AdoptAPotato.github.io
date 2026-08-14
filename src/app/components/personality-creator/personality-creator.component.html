@@ -15,19 +15,19 @@
         ✦
         &nbsp;
         عنصر:
-        <span *ngIf="state.birth_month" [style.color]="elements[state.birth_month.element].color">
-          {{ elements[state.birth_month.element].name }}
-          <img src="/elements/{{ elements[state.birth_month.element].img }}" class="element-img">
+        <span *ngIf="state.birthMonth" [style.color]="state.element.color">
+          {{ state.element.name }}
+          <img src="/elements/{{ state.element.img }}" class="element-img">
         </span>
-        <span *ngIf="!state.birth_month">-</span>
+        <span *ngIf="!state.birthMonth">-</span>
       </label>
 
-      <select class="form-select" [(ngModel)]="state.birth_month">
+      <select class="form-select" [(ngModel)]="state.birthMonth">
         <option disabled selected>
           انتخاب ماه
         </option>
         
-        <option *ngFor="let month of months" [ngValue]="month">
+        <option *ngFor="let month of months" [ngValue]="month.name">
           {{ month.name }}
         </option>
       </select>
@@ -39,7 +39,7 @@
         تیپ شخصیتی MBTI
       </label>
 
-      <select class="form-select">
+      <select class="form-select" [(ngModel)]="state.mbti">
         <option disabled selected>
           انتخاب تیپ
         </option>
@@ -116,7 +116,7 @@
         خوراکی مورد علاقه
       </label>
 
-      <input class="form-control">
+      <input class="form-control" [(ngModel)]="state.favoriteFood">
     </div>
 
 
@@ -126,7 +126,7 @@
         سرگرمی مورد علاقه
       </label>
 
-      <input class="form-control">
+      <input class="form-control" [(ngModel)]="state.favoriteHobby">
     </div>
 
 
@@ -136,7 +136,7 @@
         یه فکت جالب درباره این شخصیت
       </label>
 
-      <input class="form-control">
+      <input class="form-control" [(ngModel)]="state.funFact">
     </div>
 
   </div>

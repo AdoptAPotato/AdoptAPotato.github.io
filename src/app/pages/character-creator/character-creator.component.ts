@@ -9,6 +9,7 @@ import { AssetLoaderService } from '../../services/asset-loader.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { HttpClient } from '@angular/common/http';
 import { Category } from '../../models/creator';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -34,7 +35,8 @@ export class CharacterCreatorComponent {
 
   constructor(
     private http: HttpClient,
-    private assetLoader: AssetLoaderService
+    private assetLoader: AssetLoaderService,
+    private api: ApiService
   ) {}
 
   async ngOnInit() {
@@ -68,6 +70,10 @@ export class CharacterCreatorComponent {
   }
 
   next() {
+    //Submit
+    if (this.currentStep == this.maxSteps)
+      this.api.submitPotato();
+
     this.currentStep++;
   }
 
