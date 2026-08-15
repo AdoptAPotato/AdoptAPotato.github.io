@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
@@ -26,6 +26,9 @@ import { CreatorStateService } from '../../services/creator-state.service';
   styleUrl: './character-creator.component.css'
 })
 export class CharacterCreatorComponent {
+
+  @ViewChild(LookCreatorComponent)
+  child!: LookCreatorComponent;
 
   currentStep: number = 1;
   maxSteps: number = 3;
@@ -74,6 +77,11 @@ export class CharacterCreatorComponent {
   }
 
   next() {
+    if (this.currentStep == 2 && !this.child.isValid()) {
+      this.child.form.control.markAllAsTouched();
+      return;
+    }
+
     this.currentStep++;
   }
 

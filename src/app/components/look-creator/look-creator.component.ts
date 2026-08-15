@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { CreatorWizardComponent } from '../../components/creator-wizard/creator-wizard.component';
@@ -21,6 +21,8 @@ import { SIZES } from '../../data/constants';
 export class LookCreatorComponent {
 
   @Input() categories: Category[] = [];
+  
+  @ViewChild('form') form!: NgForm;
 
   isDragging = false;
   
@@ -36,6 +38,16 @@ export class LookCreatorComponent {
 
   get sizes() {
     return SIZES;
+  }
+
+  get hasInvalidExtraItems(): boolean {
+    return this.state.extraItems.some(
+      item => !item.description?.trim()
+    );
+  }
+
+  isValid(): boolean {
+    return this.form.valid!;
   }
 
   onDragOver(event: DragEvent) {

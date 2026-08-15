@@ -1,16 +1,24 @@
 <h4>اول ببینیم سیب‌زمینیت قراره چه شکلی باشه...</h4>
 
 <div class="outer-flex d-flex flex-wrap justify-content-between py-5">
-    <form class="ms-lg-5">
+    <form  #form="ngForm" class="ms-lg-5">
         <div class="form-group mb-4">
             <label for="nameInput" class="form-label">اسم سیب‌زمینی</label>
 
             <input
-            class="form-control"
-            id="nameInput"
-            name="nameInput"
-            [ngModel]="state.potatoName()"
-            (ngModelChange)="state.potatoName.set($event)">
+                class="form-control"
+                id="nameInput"
+                name="nameInput"
+                required
+                [ngModel]="state.potatoName()"
+                (ngModelChange)="state.potatoName.set($event)"
+                #nameInput="ngModel">
+
+            <div
+                *ngIf="nameInput.invalid && nameInput.touched"
+                class="text-danger mt-2">
+                لطفاً اسم سیب‌زمینی را وارد کنید.
+            </div>
         </div>
 
         <div class="form-group mb-4">
@@ -93,72 +101,79 @@
             class="needed-item-row"
             *ngFor="let item of state.extraItems; let i = index">
 
-            <div class="item-type-group d-flex flex-wrap">
-                <label class="form-check">
+                <div class="item-type-group d-flex flex-wrap">
+                    <label class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        [name]="'itemType' + i"
+                        [(ngModel)]="item.isCustom"
+                        [value]="false">
+                    <span class="form-check-label">آماده</span>
+                    </label>
+
+                    <label class="form-check">
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        [name]="'itemType' + i"
+                        [(ngModel)]="item.isCustom"
+                        [value]="true">
+                    <span class="form-check-label">سفارشی</span>
+                    </label>
+                </div>
+
                 <input
-                    class="form-check-input"
-                    type="radio"
-                    [name]="'itemType' + i"
-                    [(ngModel)]="item.isCustom"
-                    [value]="false">
-                <span class="form-check-label">آماده</span>
+                    class="form-control"
+                    placeholder="توضیح کوتاه"
+                    [(ngModel)]="item.description"
+                    [name]="'itemDescription' + i"
+                    required>
+
+
+                <label class="reference-image upload-btn">
+
+                    <input
+                    hidden
+                    type="file"
+                    accept="image/*"
+                    (change)="onItemImageSelected($event, item)">
+
+                    <img
+                    *ngIf="item.preview"
+                    [src]="item.preview"
+                    alt="Reference image">
+
+                    <i
+                    *ngIf="!item.preview"
+                    class="bi bi-image"></i>
+
                 </label>
 
-                <label class="form-check">
-                <input
-                    class="form-check-input"
-                    type="radio"
-                    [name]="'itemType' + i"
-                    [(ngModel)]="item.isCustom"
-                    [value]="true">
-                <span class="form-check-label">سفارشی</span>
-                </label>
-            </div>
-
-            <input
-                class="form-control"
-                placeholder="توضیح کوتاه"
-                [(ngModel)]="item.description"
-                [name]="'itemDescription' + i">
-
-            <label class="reference-image upload-btn">
-
-                <input
-                hidden
-                type="file"
-                accept="image/*"
-                (change)="onItemImageSelected($event, item)">
-
-                <img
-                *ngIf="item.preview"
-                [src]="item.preview"
-                alt="Reference image">
-
-                <i
-                *ngIf="!item.preview"
-                class="bi bi-image"></i>
-
-            </label>
-
-            <button
-                type="button"
-                class="btn btn-danger remove-btn"
-                (click)="removeItem(i)">
-                <i class="bi bi-x"></i>
-            </button>
-
+                <button
+                    type="button"
+                    class="btn btn-danger remove-btn"
+                    (click)="removeItem(i)">
+                    <i class="bi bi-x"></i>
+                </button>
             </div>
 
             <div>
-            <button
-            class="btn btn-primary mt-2"
-            type="button"
-            (click)="addItem()">
+                <button
+                class="btn btn-primary mt-2"
+                type="button"
+                (click)="addItem()">
 
-            <i class="bi bi-plus"></i>
-            اضافه کردن آیتم
+                <i class="bi bi-plus"></i>
+                اضافه کردن آیتم
 
-            </button>
+                </button>
+            </div>
+
+            <div
+                *ngIf="hasInvalidExtraItems"
+                class="text-danger mt-2">
+                لطفاً توضیح کوتاهی برای همه‌ آیتم‌ها وارد کنید.
             </div>
 
         </div>
