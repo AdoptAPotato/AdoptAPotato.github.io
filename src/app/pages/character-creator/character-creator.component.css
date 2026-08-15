@@ -45,3 +45,7 @@
 .line.active {
   background: #567c57;
 }
+
+.toast {
+  width: fit-content;
+}

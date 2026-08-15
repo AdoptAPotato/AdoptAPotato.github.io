@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
 import { LookCreatorComponent } from '../../components/look-creator/look-creator.component';
@@ -7,7 +9,6 @@ import { PersonalityCreatorComponent } from '../../components/personality-creato
 import { CreatorSubmitComponent } from '../../components/creator-submit/creator-submit.component';
 import { AssetLoaderService } from '../../services/asset-loader.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
-import { HttpClient } from '@angular/common/http';
 import { Category } from '../../models/creator';
 import { ApiService } from '../../services/api.service';
 import { CreatorStateService } from '../../services/creator-state.service';
@@ -16,6 +17,7 @@ import { CreatorStateService } from '../../services/creator-state.service';
   selector: 'app-character-creator',
   imports: [
     CommonModule,
+    NgbToastModule,
     CreatorExplanationComponent,
     LookCreatorComponent,
     PersonalityCreatorComponent,
@@ -29,6 +31,8 @@ export class CharacterCreatorComponent {
 
   @ViewChild(LookCreatorComponent)
   child!: LookCreatorComponent;
+
+  showErrorToast = false;
 
   currentStep: number = 1;
   maxSteps: number = 3;
@@ -98,6 +102,12 @@ export class CharacterCreatorComponent {
       this.currentStep++;
     } catch (error) {
       console.error('Failed to submit order', error);
+
+      this.showErrorToast = false;
+
+      setTimeout(() => {
+        this.showErrorToast = true;
+      });
     } finally {
       this.isSubmitting = false;
     }

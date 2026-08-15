@@ -59,3 +59,13 @@
     </button>
   </div>
 </div>
+
+<ngb-toast
+  *ngIf="showErrorToast"
+  [autohide]="true"
+  [delay]="6000"
+  class="bg-danger text-white position-fixed top-0 start-50 translate-middle-x mt-5 p-2 toast">
+
+  متاسفانه مشکلی در ثبت سفارش پیش آمده. لطفاً بعداً دوباره تلاش کنید و یا با ما در تماس باشید.
+
+</ngb-toast>
