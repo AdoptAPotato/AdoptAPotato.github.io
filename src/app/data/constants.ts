@@ -1,3 +1,6 @@
+// Contact
+export const PHONE_NUMBER = '۰۹۹۱۲۱۳۱۴۱۵';
+
 // Look
 export const SIZES = [
   { width: 4, code: 'XS' }, 
@@ -5,7 +8,7 @@ export const SIZES = [
   { width: 6, code: 'M' },
   { width: 7, code: 'L' },
   { width: 8, code: 'XL' }
-]
+];
 
 
 // Personality

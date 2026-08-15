@@ -2,7 +2,7 @@
 
 <div 
     class="container p-5 pb-0 pb-lg-3"
-    [style.display]="imagesLoaded ? 'block' : 'none'">
+    [style.visibility]="imagesLoaded ? 'visible' : 'hidden'">
     
     <h1 class="display-3 fw-bold mb-5">
         <span class="h1" #title></span>
@@ -21,5 +21,17 @@
         </div>
 
         <img *ngIf="!last" src="/textures/hr.png" class="hr mb-5">
+    </div>
+
+    <div #contact class="contact-container mt-3 mt-lg-5">
+        <img src="/textures/chuck line.png" class="chuck">
+        
+        <h1 class="mb-5">
+            تماس با ما
+        </h1>
+        
+        <div class="mb-5">
+            برای ارتباط با ما و در میون گذاشتن نظرات، پیشنهادات، انتقادات، و خلاصه هر چیزی که دوست دارید ما بدونیم، می‌تونید از طریق واتساپ یا تلگرام به شماره {{ phoneNumber }} پیام بدید.
+        </div>
     </div>
 </div>

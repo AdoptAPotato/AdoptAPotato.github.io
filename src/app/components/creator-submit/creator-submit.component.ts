@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { CharacterRendererService } from '../../services/character-renderer.service';
 import { CreatorStateService } from '../../services/creator-state.service';
+import { PHONE_NUMBER } from '../../data/constants';
 
 @Component({
   selector: 'app-creator-submit',
@@ -15,5 +16,9 @@ export class CreatorSubmitComponent {
     public state: CreatorStateService,
     public renderer:CharacterRendererService
   ) {}
+
+  get phoneNumber() {
+    return PHONE_NUMBER;
+  }
 
 }

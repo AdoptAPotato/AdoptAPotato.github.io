@@ -30,3 +30,25 @@
     position: relative;
     z-index: 1;
 }
+
+.contact-container {
+    position: relative;
+}
+
+.chuck {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  
+  width: 105%;
+  height: 130%;
+
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .chuck {
+        width: 120%;
+    }
+}

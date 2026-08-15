@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ViewChild, TemplateRef } from '@angular/core';
 
-import { ELEMENTS, MBTI_TYPES, MONTHS, SIZES } from '../../data/constants';
+import { ELEMENTS, MBTI_TYPES, MONTHS, PHONE_NUMBER, SIZES } from '../../data/constants';
 import { Potato } from '../../models/potato';
 import { ApiService } from '../../services/api.service';
 
@@ -43,6 +43,10 @@ export class PotatoDetailsComponent implements OnInit {
     this.birth_monthElement = ELEMENTS[MONTHS.find(t => t.name === this.potato!.birth_month)!.element];
     this.mbtiType = MBTI_TYPES.find(t => t.code === this.potato!.mbti);
     this.size = SIZES.find(t => t.code === this.potato!.size);
+  }
+
+  get phoneNumber() {
+    return PHONE_NUMBER;
   }
 
   sign() {
