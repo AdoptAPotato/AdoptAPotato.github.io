@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Potato } from '../models/potato';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { CreatorStateService } from './creator-state.service';
 import { CharacterRendererService } from './character-renderer.service';
 
@@ -36,10 +36,22 @@ export class ApiService {
   }
 
 
-  submitPotato() {
-    const potato = {
-      natnional_ID: this.state.nationalID,
-      potatoName: this.state.potatoName(),
+  async submitPotato() {
+    // Create the potato image file from what canvas has saved
+    const response = await fetch(this.renderer.lastRenderedImage!);
+    const blob = await response.blob();
+
+    const imgFile = new File(
+      [blob],
+      'potato.png',
+      { type: 'image/png' }
+    );
+
+    // Create the request
+    const formData = new FormData();
+
+    const data = {
+      name: this.state.potatoName(),
       size: this.state.size,
       description: this.state.description,
       birthMonth: this.state.birthMonth,
@@ -50,11 +62,46 @@ export class ApiService {
       strengths: this.state.strengths,
       weaknesses: this.state.weaknesses,
       additionalImages: this.state.additionalImages,
-      extraItems: this.state.extraItems,
-      image: this.renderer.lastRenderedImage
+      
+      extraItems: this.state.extraItems.map(item => ({
+        description: item.description,
+        isCustom: item.isCustom
+      }))
     }
 
-    console.log(potato);
+    formData.append(
+      'data',
+      JSON.stringify(data)
+    );
+
+    formData.append(
+      'image',
+      imgFile
+    );
+
+    this.state.additionalImages.forEach(image => {
+      formData.append(
+        'additional_images',
+        image
+      );
+    });
+
+    this.state.extraItems.forEach((item, index) => {
+      if (item.image) {
+        formData.append(
+          `extra_item_images_${index}`,
+          item.image
+        );
+      }
+    });
+
+    // Post the request
+    return await firstValueFrom(
+      this.http.post<{ nationalID: string }>(
+        this.apiUrl + 'order/',
+        formData
+      )
+    );
   }
 
 }

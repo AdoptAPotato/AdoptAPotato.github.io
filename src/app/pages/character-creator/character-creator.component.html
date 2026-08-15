@@ -39,8 +39,16 @@
     <button
       *ngIf="maxSteps === currentStep"
       class="btn btn-primary btn-lg"
-      (click)="next()">
-      ثبت
+      [disabled]="isSubmitting"
+      (click)="submit()">
+
+      {{ isSubmitting ? 'در حال ثبت... ' : 'ثبت' }}
+
+      <span
+        *ngIf="isSubmitting"
+        class="spinner-border spinner-border-sm me-2"
+        aria-hidden="true">
+      </span>
     </button>
 
     <button

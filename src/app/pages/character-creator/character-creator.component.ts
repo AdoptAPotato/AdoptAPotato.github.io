@@ -10,6 +10,7 @@ import { LoadingComponent } from '../../components/loading/loading.component';
 import { HttpClient } from '@angular/common/http';
 import { Category } from '../../models/creator';
 import { ApiService } from '../../services/api.service';
+import { CreatorStateService } from '../../services/creator-state.service';
 
 @Component({
   selector: 'app-character-creator',
@@ -29,13 +30,16 @@ export class CharacterCreatorComponent {
   currentStep: number = 1;
   maxSteps: number = 3;
 
-  imagesLoaded = false;
-  
   categories: Category[] = [];
+
+  imagesLoaded = false;
+
+  isSubmitting = false;
 
   constructor(
     private http: HttpClient,
     private assetLoader: AssetLoaderService,
+    private state: CreatorStateService,
     private api: ApiService
   ) {}
 
@@ -70,11 +74,25 @@ export class CharacterCreatorComponent {
   }
 
   next() {
-    //Submit
-    if (this.currentStep == this.maxSteps)
-      this.api.submitPotato();
-
     this.currentStep++;
+  }
+
+  async submit() {
+    if (this.isSubmitting) return;
+
+    this.isSubmitting = true;
+
+    try {
+      const response = await this.api.submitPotato();
+
+      this.state.nationalID = response.nationalID;
+
+      this.currentStep++;
+    } catch (error) {
+      console.error('Failed to submit order', error);
+    } finally {
+      this.isSubmitting = false;
+    }
   }
 
   previous() {
