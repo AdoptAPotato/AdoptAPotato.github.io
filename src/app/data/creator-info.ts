@@ -1,4 +1,6 @@
-[
+import { Category } from "../models/creator";
+
+export const creatorInfo: Category[] = [
     {
         "name": "eye",
         "image": "/wizard/categories/eyes.png",

@@ -1,11 +1,11 @@
 export interface Item {
+  group_id: number;
   thumbnail: string;
   mask?: string;
   shadow?: string;
   fixed?: string;
   colors?: string[];
-  group_id: number;
-  z_index: number ;
+  z_index?: number;
 }
 
 export interface Category {

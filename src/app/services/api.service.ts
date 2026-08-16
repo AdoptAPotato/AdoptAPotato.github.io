@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom, Observable } from 'rxjs';
+import { firstValueFrom, Observable, of, tap } from 'rxjs';
 
 import { Potato } from '../models/potato';
 import { CreatorStateService } from './creator-state.service';
@@ -14,7 +14,7 @@ export class ApiService {
 
   private apiUrl = environment.apiUrl;
 
-  private potatoes: Potato[] = [];
+  private potatoes: Potato[] | null = null;
 
 
   constructor(
@@ -25,7 +25,13 @@ export class ApiService {
 
   
   getPotatoes(): Observable<Potato[]> {
-    return this.http.get<Potato[]>(this.apiUrl);
+    if (this.potatoes) {
+      return of(this.potatoes);
+    }
+
+    return this.http.get<Potato[]>(this.apiUrl).pipe(
+      tap(potatoes => this.potatoes = potatoes)
+    );
   }
 
   setPotatoes(potatoes: Potato[]) {
@@ -33,7 +39,7 @@ export class ApiService {
   }
 
   getPotatoById(national_id: string): Potato | undefined {
-    return this.potatoes.find(p => p.national_id === national_id);
+    return this.potatoes!.find(p => p.national_id === national_id);
   }
 
 

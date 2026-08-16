@@ -9,6 +9,7 @@ import { Character } from '../../models/character';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { AssetLoaderService } from '../../services/asset-loader.service';
 import { PHONE_NUMBER } from '../../data/constants';
+import { us } from '../../data/us';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -26,7 +27,7 @@ export class AboutUsComponent implements AfterViewInit {
   @ViewChildren('personCard') cards!: QueryList<ElementRef>;
   @ViewChild('contact') contact!: ElementRef;
 
-  people: Character[] = [];
+  people: Character[] = us;
 
   imagesLoaded = false;
 
@@ -36,28 +37,22 @@ export class AboutUsComponent implements AfterViewInit {
     return PHONE_NUMBER;
   }
 
-  ngOnInit(): void {
-    this.http.get<Character[]>('/data/us.json')
-      .subscribe(async data => {
+  async ngOnInit() {
+    const images = [
+      ...this.people.flatMap(person => [
+        person.img,
+        person.bg_img
+      ]),
+      '/textures/hr.png'
+    ];
 
-        this.people = data;
+    await this.assetLoader.preloadImages(images);
 
-        const images = [
-          ...this.people.flatMap(person => [
-            person.img,
-            person.bg_img
-          ]),
-          '/textures/hr.png'
-        ];
+    this.imagesLoaded = true;
 
-        await this.assetLoader.preloadImages(images);
-
-        this.imagesLoaded = true;
-
-        requestAnimationFrame(() => {
-          ScrollTrigger.refresh();
-        });
-      });
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
   }
 
   ngAfterViewInit() {
@@ -71,15 +66,8 @@ export class AboutUsComponent implements AfterViewInit {
       autoAlpha: 0
     });
 
+    this.animateCards();
     this.animateContact();
-
-    this.cards.changes.subscribe(() => {
-      this.animateCards();
-
-      requestAnimationFrame(() => {
-        ScrollTrigger.refresh();
-      });
-    });
   }
 
   private animateContact() {

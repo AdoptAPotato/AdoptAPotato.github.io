@@ -12,6 +12,7 @@ import { LoadingComponent } from '../../components/loading/loading.component';
 import { Category } from '../../models/creator';
 import { ApiService } from '../../services/api.service';
 import { CreatorStateService } from '../../services/creator-state.service';
+import { creatorInfo } from '../../data/creator-info';
 
 @Component({
   selector: 'app-character-creator',
@@ -37,7 +38,7 @@ export class CharacterCreatorComponent {
   currentStep: number = 1;
   maxSteps: number = 3;
 
-  categories: Category[] = [];
+  categories: Category[] = creatorInfo;
 
   imagesLoaded = false;
 
@@ -51,11 +52,6 @@ export class CharacterCreatorComponent {
   ) {}
 
   async ngOnInit() {
-    this.http.get<Category[]>('/data/creator-info.json')
-      .subscribe(data => {
-        this.categories = data;
-      });
-
     const imageUrls = this.categories
       .flatMap(category => category.items)
       .flatMap(item => [
