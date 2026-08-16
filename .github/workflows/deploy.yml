@@ -33,15 +33,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Show build output
-        run: |
-          echo "Dist contents:"
-          find dist -maxdepth 4 -type f | head -100
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist/adoptapotato/browser
+          path: ./dist/adopt-a-potato/browser
 
   deploy:
     needs: build
