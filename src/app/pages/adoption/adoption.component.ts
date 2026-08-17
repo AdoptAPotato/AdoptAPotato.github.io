@@ -48,6 +48,12 @@ export class AdoptionComponent implements OnInit {
       '/textures/paper.png',
       '/textures/hr.png',
       '/textures/paper_cropped.png',
+      '/textures/stamp.png',
+      '/textures/signature.png',
+      '/elements/air.png',
+      '/elements/fire.png',
+      '/elements/earth.png',
+      '/elements/water.png',
 
       ...this.potatoes.map(potato =>
         potato.image
