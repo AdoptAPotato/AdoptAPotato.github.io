@@ -14,7 +14,7 @@ export const us: Character[] = [
         "bg_img": "/textures/fluid_primary.svg"
     },
     {
-        "name": "تینا",
+        "name": "Toka",
         "description": "کسی که از شروع این ایده تا رسیدنش به این نقطه هر لحظه همراهم بوده و تشویق و ایده‌پردازی‌هاش به من انگیزه می‌داد که این کار رو ادامه بدم. خلاصه کسیه که مهم نیست چقدر ایده‌هام عجیب باشن، همیشه پشتمه تا عملیشون کنم!",
         "img": "/us/tina.png",
         "bg_img": "/textures/fluid_secondary.svg"
