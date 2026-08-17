@@ -51,9 +51,9 @@ export class CharacterCreatorComponent {
 
   async ngOnInit() {
     const thumbnailUrls = this.categories
-      .flatMap(category => category.items)
-      .flatMap(item => [
-        item.thumbnail
+      .flatMap(category => [
+        category.image,
+        ...category.items.map(item => item.thumbnail)
       ])
       .filter((url): url is string => !!url);
 
