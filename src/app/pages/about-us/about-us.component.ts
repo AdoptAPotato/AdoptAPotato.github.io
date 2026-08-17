@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CommonModule, } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 
 import { Character } from '../../models/character';
 import { LoadingComponent } from '../../components/loading/loading.component';
@@ -31,7 +30,7 @@ export class AboutUsComponent implements AfterViewInit {
 
   imagesLoaded = false;
 
-  constructor(private http: HttpClient, private assetLoader: AssetLoaderService) {}
+  constructor(private assetLoader: AssetLoaderService) {}
 
   get phoneNumber() {
     return PHONE_NUMBER;

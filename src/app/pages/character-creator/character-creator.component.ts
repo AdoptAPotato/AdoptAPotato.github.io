@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CreatorExplanationComponent } from '../../components/creator-explanation/creator-explanation.component';
@@ -45,25 +44,21 @@ export class CharacterCreatorComponent {
   isSubmitting = false;
 
   constructor(
-    private http: HttpClient,
     private assetLoader: AssetLoaderService,
     private state: CreatorStateService,
     private api: ApiService
   ) {}
 
   async ngOnInit() {
-    const imageUrls = this.categories
+    const thumbnailUrls = this.categories
       .flatMap(category => category.items)
       .flatMap(item => [
-        item.thumbnail,
-        item.mask,
-        item.shadow,
-        item.fixed
+        item.thumbnail
       ])
       .filter((url): url is string => !!url);
 
     const images = [
-      ...imageUrls,
+      ...thumbnailUrls,
       '/sample POTATO/real.png',
       '/sample POTATO/arrow.png',
       '/sample POTATO/animation.png',
@@ -74,6 +69,17 @@ export class CharacterCreatorComponent {
     await this.assetLoader.preloadImages(images);
 
     this.imagesLoaded = true;
+
+    const imageUrls = this.categories
+      .flatMap(category => category.items)
+      .flatMap(item => [
+        item.mask,
+        item.shadow,
+        item.fixed
+      ])
+      .filter((url): url is string => !!url);
+
+    this.assetLoader.preloadImages(imageUrls);
   }
 
   next() {
