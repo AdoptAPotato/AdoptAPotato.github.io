@@ -5,11 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class AssetLoaderService {
 
+  private loadedImages = new Set<string>();
+
   preloadImages(urls: string[]): Promise<void> {
+    const newUrls = urls.filter(url => !this.loadedImages.has(url));
 
     return Promise.all(
-      urls.map(url => this.preloadImage(url))
-    ).then(() => {});
+      newUrls.map(url => this.preloadImage(url))
+    ).then(() => {
+      newUrls.forEach(url => this.loadedImages.add(url));
+    });
   }
 
   private preloadImage(url: string): Promise<void> {
