@@ -85,7 +85,7 @@ export class HomeComponent implements AfterViewInit {
       ease: "back.out(1.7)",
       scrollTrigger: {
         trigger: this.bottom.nativeElement,
-        start: "top 80%",
+        start: "top bottom",
         toggleActions: "play none none none"
       }
     });

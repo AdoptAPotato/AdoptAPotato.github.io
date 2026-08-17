@@ -78,7 +78,7 @@ export class AboutUsComponent implements AfterViewInit {
         ease: "back.out(1.6)",
         scrollTrigger: {
           trigger: this.contact.nativeElement,
-          start: "top 75%",
+          start: "top bottom",
           toggleActions: "play none none none"
         }
       });
