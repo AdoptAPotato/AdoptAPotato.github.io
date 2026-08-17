@@ -6,6 +6,7 @@ import { Potato } from '../models/potato';
 import { CreatorStateService } from './creator-state.service';
 import { CharacterRendererService } from './character-renderer.service';
 import { environment } from '../../environments/environment';
+import { PricingService } from './pricing.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class ApiService {
   constructor(
     private http: HttpClient, 
     private state: CreatorStateService,
-    private renderer: CharacterRendererService
+    private renderer: CharacterRendererService,
+    private pricing: PricingService
   ) {}
 
   
@@ -69,6 +71,8 @@ export class ApiService {
       strengths: this.state.strengths,
       weaknesses: this.state.weaknesses,
       additionalImages: this.state.additionalImages,
+
+      price: this.pricing.getBreakdown().total,
       
       extraItems: this.state.extraItems.map(item => ({
         description: item.description,
