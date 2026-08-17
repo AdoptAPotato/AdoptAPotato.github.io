@@ -56,14 +56,33 @@
 
     <!-- Strengths -->
     <div class="col-md-6">
-      <label class="form-label">
-        نقاط قوت
-      </label>
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <label class="form-label mb-0">
+          نقاط قوت
+        </label>
+      </div>
 
-      <input
-        class="form-control"
-        placeholder="افزودن نقطه قوت..."
-        (keydown.enter)="addStrength($event)">
+      <div class="input-group" dir="ltr">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addStrength()">
+          <i class="bi bi-plus-lg"></i>
+        </button>
+
+        <input
+          dir="rtl"
+          class="form-control"
+          placeholder="افزودن نقطه قوت..."
+          [(ngModel)]="newStrength"
+          (keydown.enter)="addStrength()">
+      </div>
+
+      <small
+        *ngIf="state.strengths.length === 0"
+        class="text-muted d-block mt-2">
+        * نقطه قوت را وارد کنید و روی دکمه + بزنید.
+      </small>
 
       <div class="tag-input mt-2">
         <div
@@ -76,7 +95,6 @@
             class="bi bi-x-lg me-2"
             (click)="removeStrength(strength)">
           </i>
-
         </div>
       </div>
     </div>
@@ -88,10 +106,27 @@
         نقاط ضعف
       </label>
 
-      <input
-        class="form-control"
-        placeholder="افزودن نقطه ضعف..."
-        (keydown.enter)="addWeakness($event)">
+      <div class="input-group" dir="ltr">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="addWeakness()">
+          <i class="bi bi-plus-lg"></i>
+        </button>
+
+        <input
+          dir="rtl"
+          class="form-control"
+          placeholder="افزودن نقطه ضعف..."
+          [(ngModel)]="newWeakness"
+          (keydown.enter)="addWeakness()">
+      </div>
+      
+      <small
+        *ngIf="state.weaknesses.length === 0"
+        class="text-muted d-block mt-2">
+        * نقطه ضعف را وارد کنید و روی دکمه + بزنید.
+      </small>
 
       <div class="tag-input mt-2">
         <div

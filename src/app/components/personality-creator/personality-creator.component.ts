@@ -14,6 +14,9 @@ import { MBTI_TYPES, MONTHS } from '../../data/constants';
 })
 export class PersonalityCreatorComponent {
 
+  newStrength = '';
+  newWeakness = '';
+
   constructor(public state: CreatorStateService) {}
 
   get mbtiTypes() {
@@ -24,28 +27,26 @@ export class PersonalityCreatorComponent {
     return MONTHS;
   }
 
-  addStrength(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const value = input.value.trim();
+  addStrength() {
+    const value = this.newStrength.trim();
 
     if (!value) return;
 
     this.state.strengths.push(value);
-    input.value = '';
+    this.newStrength = '';
   }
 
   removeStrength(item: string) {
     this.state.strengths = this.state.strengths.filter(x => x !== item);
   }
 
-  addWeakness(event: Event) {
-    const input = event.target as HTMLInputElement;
-    const value = input.value.trim();
+  addWeakness() {
+    const value = this.newWeakness.trim();
 
     if (!value) return;
 
     this.state.weaknesses.push(value);
-    input.value = '';
+    this.newWeakness = '';
   }
 
   removeWeakness(item: string) {
