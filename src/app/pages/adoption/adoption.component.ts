@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -16,7 +16,7 @@ import { firstValueFrom } from 'rxjs';
   templateUrl: './adoption.component.html',
   styleUrl: './adoption.component.css'
 })
-export class AdoptionComponent implements OnInit, AfterViewInit {
+export class AdoptionComponent implements OnInit {
 
   potatoes: Potato[] = [];
   filteredPotatoes: Potato[] = [];
@@ -57,6 +57,13 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
     await this.assetLoader.preloadImages(images);
 
     this.imagesLoaded = true;
+
+    requestAnimationFrame(() => {
+      document.querySelectorAll('app-potato-card').forEach(el => {
+        const rotation = (Math.random() - 0.5) * 6;
+        (el as HTMLElement).style.transform = `rotate(${rotation}deg)`;
+      });
+    });
   }
 
   async loadPotatoes() {
@@ -71,13 +78,6 @@ export class AdoptionComponent implements OnInit, AfterViewInit {
     } catch (error) {
       console.error('Failed to load potatoes', error);
     }
-  }
-
-  ngAfterViewInit() {
-    document.querySelectorAll('app-potato-card').forEach(el => {
-      const rotation = (Math.random() - 0.5) * 6;
-      (el as HTMLElement).style.transform = `rotate(${rotation}deg)`;
-    });
   }
 
   applyFilters() {
